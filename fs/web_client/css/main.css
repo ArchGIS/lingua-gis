@@ -1,0 +1,569 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.field-input {
+    background-color: #F6F8FA;
+    border: 1px solid #E0E0E8;
+    display: inline-block;
+    margin: 2px;
+    max-width: 100%;
+}
+
+.field-input input {
+    max-width: calc(100% - 6px);
+}
+
+.field-input select {
+    width: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  height: calc(100% - 2em);
+  min-width: 875px;
+}
+
+body, button, input, select, textarea,
+.pure-g [class *= "pure-u"],
+.ui-widget {
+    font-family: 'Open Sans', sans-serif, !important;
+}
+
+*:focus {
+  outline: none;
+}
+
+nav {
+  margin-bottom: 2em;
+}
+
+a, a:visited {
+  color: #33d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*
+  Основные блоки
+*/
+
+#body {
+  margin-top: 60px;
+  height: 100%;
+  width: 100%;
+  min-height: calc(100vh - 5em);
+}
+
+.content {
+  width: 49%;
+  margin-top: 60px;
+  padding-left: 1em;
+}
+
+.content-full{
+  width: 100%;
+  margin-top: 60px;
+  padding-left: 1em;
+}
+
+.content.wide-content {
+  width: 70%;
+}
+
+#container {
+  width: 100%;
+  margin-top: 7px;
+}
+
+#top-menu {
+  width: 100%;
+}
+
+.maps {
+  position: fixed;
+  left: calc(50% + 1em);
+  top: 60px;
+  width: calc(100% - 50% - 1.5em);
+  height: 90%;
+  border: 1px solid;
+}
+
+.maps.small-map {
+  left: calc(70% + 1em);
+  width: calc(100% - 70% - 1.5em);
+}
+
+.block {
+  width: 50%;
+  margin: auto;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 30px;
+}
+@media (max-width: 880px) {
+  .block {
+    width: 100%;
+    margin: 0px 30px;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 0 0 5px 5px;
+  }
+}
+footer {
+  width: 200px;
+  height: 1em;
+  margin-left: 1em;
+}
+
+/* ######################## */
+
+.switch {
+  cursor: pointer;
+}
+
+.top-indent {
+  margin-top: 30px;
+}
+
+.pure-menu {
+  padding: 0;
+  margin: 0;
+}
+
+.pure-menu, .pure-menu-list {
+  background: rgb(58, 58, 58);
+}
+
+a.pure-menu-heading {
+  color: #ccc;
+  text-decoration: none;
+  float: left;
+}
+
+a.pure-menu-heading:hover {
+  color: #fff;
+}
+
+a.pure-button {
+  color: #fff;
+}
+
+a.pure-button:hover {
+  text-decoration: none;
+}
+
+.pure-menu-list {
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+.pure-menu-link:hover {
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pure-menu-link:focus {
+  background: rgb(58, 58, 58);
+}
+
+.pure-menu-list li a {
+  color: #ddd;
+}
+
+.pure-menu-list li:hover > a {
+  background: #222;
+}
+
+.pure-menu-list > li {
+  margin-right: -5px;
+  border-right: 1px solid;
+}
+
+.pure-menu-children {
+  min-width: 100%;
+}
+
+.pure-menu-list li:hover > ul {
+  background: rgb(58, 58, 58);
+}
+
+.pure-button {
+  margin-top: 1em;
+  margin-left: 2em;
+}
+
+.pure-table {
+  margin-top: 1em;
+}
+
+.count-search {
+  margin-top: 1em;
+}
+
+input {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+#search-criteria {
+  margin-top: 1em;
+}
+
+/*
+  monument.html
+*/
+
+.ui-widget-content {
+  border: none;
+}
+
+.ui-widget-header {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: none;
+  border-radius: 0;
+}
+
+
+.coords {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.ui-autocomplete {
+  width: 40%;
+  height: auto;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ui-autocomplete li {
+  padding: 3px 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+   Сообщения
+*/
+ 
+.danger {
+  color: red;
+}
+
+.error-input {
+  font-size: 0.8em; 
+  border: 1px solid #f33 !important;
+}
+
+.required {
+  color: red;
+}
+
+.errors {
+  font-size: 1.2em;
+  color: orange;
+}
+
+.search-results {
+  margin-top: 1em;
+}
+
+.accordion-header {
+  cursor: pointer;
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6;
+  color: #555555;
+  font-weight: normal;
+  border-radius: 4px;
+  padding: 5px; 
+  margin-top: 2px;
+  margin-bottom: 0px;
+}
+.accordion-content {
+  padding: 10px;
+  padding-bottom: 0px;
+  border: 1px solid #d3d3d3;
+  border-top: 0px;
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  display: none;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+
+dt {
+  margin-top: 10px;
+}
+.coords > * {
+  margin-right: 20px;
+}
+.coords > .btn {
+  position: relative;
+  /*top: 6px;*/
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.btn:hover {
+  margin-top: 17px !important;
+  position: relative;
+  top: 0px;
+  margin-bottom: 0px;
+}
+
+.alert-info {
+  margin-top: 15px;
+}
+
+/* Модальные окна */
+.modal {
+	width: 500px;
+  height: 150px;
+	background: #FFF;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  padding: 0 10px;
+}
+
+/* Таблицы ОКН */
+.map-state-table th {
+  padding: 3px;
+  border: 1px solid gray;
+}
+
+.map-state-table > tbody > tr > td {
+  padding: 2px;
+  border: 1px solid gray;
+}
+
+/*.map-state-table > tbody > tr > td.menu {*/
+  /*padding: 0px;*/
+  /*padding-left: 3px;*/
+  /*border: 0px;*/
+/*}*/
+
+.map-state-table > tbody > tr > td > select {
+  border: 0px;
+}
+
+.map-table-row {
+  max-width: 85px;
+  word-break: break-all;
+}
+
+
+/*Progressive navbar styles*/
+.navbar-header {
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.toggle {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.navbar-right{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar-default .navbar-nav>li>a{
+  white-space: nowrap;
+}
+
+.navigation__toggle {
+  flex-shrink: 0;
+}
+
+.navigation__toggle .navigation__link {
+  position: relative;
+  padding-right: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+  color: #999999;
+  display: block;
+}
+
+.toggle:checked ~ .navbar-collapse .navigation__toggle .navigation__link:after {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #999 transparent;
+}
+
+.navigation__toggle .navigation__link:after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #999 transparent transparent transparent;
+}
+
+.ui-tabs .ui-tabs-panel{
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  .navbar-default .navbar-collapse.collapse {
+    display: flex !important;
+    max-width: 100%;
+    height: 50px !important;
+    overflow: hidden !important;
+  }
+
+  .toggle:checked ~ .navbar-collapse.collapse {
+    height: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .navigation__toggle{
+    display: none;
+  }
+}
+
+/*main page*/
+.main-page {
+  position: relative;
+  background-image: url('../img/main_grey.jpg');
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.main-page-bg {
+  position: absolute;
+  top: -20px;
+  filter: blur(1px);
+  opacity: 0.9;
+}
+
+.main-page-content {
+  display: block;
+  position: relative;
+  padding: 15px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 20px;
+}
+
+.main-page-content h1 {
+  text-align: center;
+  font-weight: 300;
+  color: rgb(23, 23, 23);
+}
+
+h2.greeting-text {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 300;
+}
+
+ul.system-statistic {
+  padding: 0;
+  list-style: none;
+  margin-top: 45px;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.system-statistic .list-header {
+  font-weight: 400;
+  padding-left: 0px;
+  padding-bottom: 10px;
+}
+
+.system-statistic > li {
+  padding-bottom: 5px;
+  padding-left: 15px;
+  font-style: italic;
+}
+
+.system-statistic > li > span {
+  font-style: normal;
+  font-weight: 400;
+}
+
+.ui-tabs .ui-tabs-panel{
+  padding: 1em;
+}
+
+.left-p {
+  padding-top: 40px;
+  padding-left: 100px;
+}
+
+.form-group.short {
+  width: 300px;
+}
+
+.entity-delete {
+  cursor: pointer;
+}
+
+#table-admin {
+  width: 90%;
+}
+
+.layer-checkbox {
+  margin-left: 10px;
+}
+
+.monument-res-hide {
+  display: none;
+}
+
+.edit-icon {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.save-icon {
+  cursor: pointer;
+  margin-left: 15px;
+  display: none;
+}
+
+.new-field {
+  display: none;
+  float: left;
+}
+
+textarea.new-field {
+  float: none;
+  width: 90%;
+  height: 70px;
+}
+
+/* 3D model */
+.model3D_site_20 {
+  max-width: 100%;
+  width: 100%;
+  height: 70vh;
+}

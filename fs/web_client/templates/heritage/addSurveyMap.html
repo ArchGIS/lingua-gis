@@ -1,0 +1,199 @@
+<h4 class="accordion-header" id="map-header-<%=mapId%>">
+  <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+  <%= t('doc.surveyMap.singular') %> №<%=mapId%>
+</h4>
+
+<div class="accordion-content">
+  <div id="map<%=mapId%>">
+    <ul>
+      <li><a href="#general<%=mapId%>"><%= t('doc.surveyMap.general') %></a></li>
+      <li><a href="#use<%=mapId%>"><%= t('doc.surveyMap.use') %></a></li>
+      <li><a href="#state<%=mapId%>"><%= t('doc.surveyMap.state') %></a></li>
+    </ul>
+
+    <div id="general<%=mapId%>">
+      <div class="form-group">
+        <label for="map-create-date-input-<%=mapId%>"><%= t('common.mapDate') %></label>
+        <input class="form-control date-picker" id="map-create-date-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="createDate"></input>
+      </div>
+
+      <div class="form-group">
+        <%= t('heritage.code') %>:
+        <span data-from="heritage-code-input"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('common.name1') %>:</label>
+        <span data-from="heritage-name-input"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('common.address') %>:</label>
+        <span data-from="heritage-address-input"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('coord.plural') %>:</label>
+        <%= t('coord.x') %> = <span data-from="heritage-x"></span>,
+        <%= t('coord.y') %> = <span data-from="heritage-y"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('date.singular') %>:</label>
+        <span data-from="heritage-date-input"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('common.status') %> :</label>
+        <span data-from="heritage-status-selector"></span>
+      </div>
+
+      <div class="form-group" toggle-by="heritage-status-selector" need-option="2">
+        <%= t('common.protCateg') %> :
+        <span data-from="heritage-security-type-selector"></span>
+      </div>
+
+      <div class="form-group" toggle-by="heritage-status-selector" need-option="2">
+        <%= t('common.protDoc') %> :
+        <span data-from="heritage-doc-type-input"></span>
+      </div>
+
+      <div class="form-group" toggle-by="heritage-status-selector" need-option="2">
+        <%= t('common.protDocNumber') %> :
+        <span data-from="heritage-doc-num-input"></span>
+      </div>
+
+      <div class="form-group" toggle-by="heritage-status-selector" need-option="2">
+        <%= t('common.protDocDate') %> :
+        <span data-from="heritage-doc-date-input"></span>
+      </div>
+
+      <div class="form-group">
+        <%= t('common.borderDescr') %> :
+        <span data-from="heritage-border-desc-input"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="map-rod-number-input"><%= t('common.regNumberBTI') %> </label>
+        <input class="form-control" id="map-rod-number-input" data-for="map_<%=mapId%>:SurveyMap" type="text" name="rodNum"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-rod-passport-input"><%= t('common.passNumBTI') %> </label>
+        <input class="form-control" id="map-rod-passport-input" data-for="map_<%=mapId%>:SurveyMap" type="text" name="rodPassport"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-rod-date-input"><%= t('common.passNumDateBTI') %> </label>
+        <input class="form-control date-picker" id="map-rod-date-input" data-for="map_<%=mapId%>:SurveyMap" type="text" name="rodDate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-area-input"><%= t('common.area') %>  (<%= t('common.metresInSq') %>)</label>
+        <input class="form-control" id="map-area-input" data-for="map_<%=mapId%>:SurveyMap" type="number" name="area"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-file-input-<%=mapId%>"><%= t('doc.surveyMap.singular') %> </label>
+        <input id="map-file-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="file" name="fileid"></input>
+        <div class="alert alert-dismissible alert-info">
+          <%= t('examples.maxSizeDoc') %>.
+        </div>
+      </div>
+    </div>
+
+    <div id="use<%=mapId%>">
+      <div class="form-group">
+        <label for="map-own-type-selector-<%=mapId%>"><%= t('common.ownType') %> </label>
+        <select class="form-control" id="map-own-type-selector-<%=mapId%>" data-for="ownType_<%=mapId%>:OwnType" type="id" name="id"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="map-disposal-type-selector-<%=mapId%>"><%= t('common.orderType') %> </label>
+        <select class="form-control" id="map-disposal-type-selector-<%=mapId%>" data-for="dispType_<%=mapId%>:DisposalType" type="id" name="id"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="map-disposer-code-input-<%=mapId%>"><%= t('common.okatoOwnerCode') %> </label>
+        <input class="form-control" id="map-disposer-code-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="disposalCode"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-disposer-vat-input-<%=mapId%>"><%= t('common.ownerINN') %> </label>
+        <input class="form-control" id="map-disposer-vat-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="disposerVat"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-disposer-kpp-input-<%=mapId%>"><%= t('common.ownerKPP') %> </label>
+        <input class="form-control" id="map-disposer-kpp-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="disposerKpp"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-type-input-<%=mapId%>"><%= t('common.ownerDocType') %> </label>
+        <input class="form-control" id="map-doc-type-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docType"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-date-input-<%=mapId%>"><%= t('common.ownerDocDate') %> </label>
+        <input class="form-control date-picker" id="map-doc-date-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docDate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-num-input-<%=mapId%>"><%= t('common.ownerDocNum') %> </label>
+        <input class="form-control" id="map-doc-num-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docNum"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-start-date-input-<%=mapId%>"><%= t('common.ownStartDate') %> </label>
+        <input class="form-control date-picker" id="map-start-date-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="startDate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-end-date-input-<%=mapId%>"><%= t('common.ownEndDate') %> </label>
+        <input class="form-control date-picker" id="map-end-date-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="endDate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-security-type-input-<%=mapId%>"><%= t('common.protDocType') %> </label>
+        <input class="form-control" id="map-doc-security-type-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docSecurityType"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-security-date-input-<%=mapId%>"><%= t('common.protDocDate1') %> </label>
+        <input class="form-control date-picker" id="map-doc-security-date-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docSecurityDate"></input>
+      </div>
+
+      <div class="form-group">
+        <label for="map-doc-security-num-input-<%=mapId%>"><%= t('common.protDocNum') %> </label>
+        <input class="form-control" id="map-doc-security-num-input-<%=mapId%>" data-for="map_<%=mapId%>:SurveyMap" type="text" name="docSecurityNum"></input>
+      </div>
+
+      <div class="form-group">
+        <%= t('common.functionalFirst') %> 
+        <p>
+          <input id="map-use-initial-yes-<%=mapId%>" data-name="useInitial" name="useInitial-<%=mapId%>" data-type="number" type="radio" value="1" data-for="map_<%=mapId%>:SurveyMap" checked><%= t('common.yes') %> 
+          <input id="map-use-initial-no-<%=mapId%>" data-name="useInitial" name="useInitial-<%=mapId%>" data-type="number" type="radio" value="0" data-for="map_<%=mapId%>:SurveyMap"><%= t('common.no') %>
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label for="map-purpose-selector"><%= t('common.funcPurpose') %></label>
+        <select class="form-control" id="map-purpose-selector-<%=mapId%>" data-for="fp_<%=mapId%>:FunctionalPurpose" type="id" name="id"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="map-availability-selector"><%= t('common.siteAccess') %></label>
+        <select class="form-control" id="map-availability-selector-<%=mapId%>" data-for="avail_<%=mapId%>:Availability" type="id" name="id"></select>
+      </div>
+
+      <div class="form-group">
+        <label for="map-usage-type-selector"><%= t('common.useType') %></label>
+        <select class="form-control" id="map-usage-type-selector-<%=mapId%>" data-for="ut_<%=mapId%>:UsageType" type="id" name="id"></select>
+      </div>
+
+    </div>
+
+    <div id="state<%=mapId%>">
+    </div>
+  </div> 
+</div>

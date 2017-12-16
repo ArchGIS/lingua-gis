@@ -1,0 +1,41 @@
+<div class="content">
+  <h2><%= t('search.bigSearch') %></h2>
+
+  <label>
+    <%= t('search.subject') %>
+    <select class="form-control" id="search-object">
+      <option value="author"><%= t('author.singular') %></option>
+      <option value="research"><%= t('research.singular') %></option>
+      <option value="monument"><%= t('monument.singular') %></option>
+    </select>
+  </label>
+
+  <br>
+  <label>
+    <%= t('search.nameSelection') %>
+  </label>
+
+  <br>
+  <input class="form-control" id="selection-name" type="text"></input>
+  <button class="btn btn-primary" id="create-selection-button" style="margin-top: 15px">
+    <i class="fa fa-search"></i>
+    <%= t("search.createSelection") %>
+  </button>
+  <br>
+  <br>
+  
+  <button class="btn btn-primary" id="add-criterion-button">
+    <i class="fa fa-search"></i>
+    <%= t("search.addCriterion") %>
+  </button>
+
+  <button class="btn btn-primary" id="show-results-button">
+    <i class="fa fa-search"></i>
+    <%= t("search.showResults") %>
+  </button>
+
+  <br>
+  <div class="search-results" id="search-results"></div>
+
+  <div id="map" class="maps">
+</div>

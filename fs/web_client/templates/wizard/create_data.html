@@ -1,0 +1,41 @@
+<div class="well bs-component block">
+    <h3><%= t("titles.wizard.create-data") %></h3>
+    <br/>
+    <div class="form-horizontal">
+        <div class="form-group">
+
+            <label class="col-sm-5 control-label" for="what-create">
+                <%= t("wizard.whatIs") %>
+            </label>
+            <div class="col-sm-4">
+                <select class="form-control" id="what-create">
+                    <option value="artifact"><%= t("artifact.singular") %></option>
+                    <option value="radiocarbon"><%= t('radiocarbon.singular') %></option>
+                    <option value="monument"><%= t("monument.singular") %></option>
+                    <option value="research"><%= t("research.singular") %></option>
+                    <option value="heritage"><%= t("heritage.singular") %></option>
+                </select>
+            </div>
+
+        </div>
+
+        <br/>
+
+        <div class="form-group">
+            <label class="col-sm-5 control-label" for="from-what-create">
+                <%= t("wizard.createBy") %>
+            </label>
+            <div class="col-sm-4">
+                <select class="form-control" id="from-what-create">
+                    <option value="#monument/new"><%= t("research.singular") %></option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <br/>
+
+    <button id="goto-create" class="btn btn-primary">
+        <%= t("wizard.start") %>
+    </button>
+</div>

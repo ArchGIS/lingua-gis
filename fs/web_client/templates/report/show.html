@@ -1,0 +1,47 @@
+<div class="content">
+  <h2><%= t("report.singular") %> "<%= ctl(report.name) %>"</h2>
+  <br>
+
+  <dt><%= t("author.singular") %>:</dt>
+  <dd><%= App.models.Author.href(author[0].id, ctl(author[0].name)) %></dd>
+
+  <dt><%= t("research.plural") %>:</dt>
+  <dd>
+    <%= _.map(researches, function(res, i) {
+      let year = res.year || t('common.yearNotDefined');
+      let resTitle = `${res.name} (${resTypes[i].name}, ${year})`;
+      return App.models.Research.href(res.id, ctl(resTitle));
+    }).join("<br>") %>
+  </dd>
+
+  <dt><%= t("common.name") %>:</dt>
+  <dd><%= ctl(report.name) %></dd>
+
+  <dt><%= t("common.year") %>:</dt>
+  <dd><%= report.year %></dd>
+
+  <dt><%= t("city.singular") %>:</dt>
+  <dd><%= maybe(city, t('common.noInfo'), "name") %></dd>
+
+  <dt><%= t("report.storage") %>:</dt>
+  <dd><%= maybe(org, t('common.noInfo'), "name") %></dd>
+
+  <dt><%= t("report.prop.number") %>:</dt>
+  <dd><%= maybe(report, t('common.noInfo'), "number") %></dd>
+
+  <% let files = [] %>
+  <% if (report.fileid) { %>
+    <% files = report.fileid.split(",") %>
+    <% _.each(files, (file, n) => { %>
+      <h4>
+        <%= App.models.File.href(file, `${t("common.file")} ${n+1}`) %> 
+        <img class="edit-icon view-icon" fileid=<%= file %> src="<%= HOST_URL %>/web_client/img/icons/view.png" width="16" height="16">
+      </h4>
+    <% }) %>
+  <% } %>
+
+</div>
+
+<% if (report.fileid) { %>
+  <iframe src="<%= App.models.File.url(files[0]) %>" class="maps" id='report-view-file'></iframe> 
+<% } %>

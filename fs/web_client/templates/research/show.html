@@ -1,0 +1,287 @@
+<div class="content">
+  <h2><%= t('research.singular') %> "<%= maybe(research, t('common.noName'), "name") %>"</h2>
+
+  <div id="container">
+    <ul>
+      <li><a href="#common"><%= t('common.general') %></a></li>
+      <li><a href="#monuments"><%= t('monument.plural') %></a></li>
+      <li><a href="#heritages"><%= t('heritage.singular') %></a></li>
+      <li><a href="#excavations"><%= t('excavation.plural') %></a></li>
+      <li><a href="#topos"><%= t('topoplan.plural') %></a></li>
+      <li><a href="#artifacts"><%= t('artifact.plural') %></a></li>
+      <li><a href="#radiocarbon"><%= t('radiocarbon.plural') %></a></li>
+      <li><a href="#cultures"><%= t('culture.plural') %></a></li>
+      <li><a href="#another">*</a></li>
+    </ul>
+
+    <div id="common">
+      <dl>
+        <dt><%= t('author.singular') %>:</dt>
+        <dd><a href="#author/show/<%= author[0].id %>">
+          <%= ctl(author[0].name) %>
+        </a></dd>
+
+        <% if (coauthors.length) { %>
+          <dt><%= t('coauthor.plural') %>:</dt>
+          <% _.each(coauthors, function(a, i) { %>
+            <dd><a href="#author/show/<%= a.id %>"><%= ctl(a.name) %></a></dd>
+          <% }); %>
+        <% } %>
+
+        <dt><%= t('research.prop.name') %>:</dt>
+        <dd class="edit-field" data-for="Research" data-type="textarea" data-id="<%=research.id%>" data-field="name">
+          <span><%= maybe(research, t('common.missing'), "name" ) %></span>
+        </dd>
+
+        <dt><%= t('research.year') %>:</dt>
+        <dd class="edit-field" data-for="Research" data-type="number" data-id="<%=research.id%>" data-field="year">
+          <span><%= maybe(research, t('common.notDefined'), "year") %></span>
+        </dd>
+
+        <dt><%= t('research.type') %>:</dt>
+        <dd><%= maybe(resType[0], t('common.notSpecif'), `${prefix}name`) %></dd>
+
+        <dt><%= t('research.prop.description') %>:</dt>
+        <dd class="edit-field" data-for="Research" data-type="textarea" data-id="<%=research.id%>" data-field="description">
+          <span><%= maybe(research, t('common.missing'), "description" ) %></span>
+        </dd>
+        
+        <% if (reports.length) { %>
+          <dt><%= t('report.singular') %>:</dt>
+          <dd>
+            <div>
+            <% _.each(reports, function(report, i) { %>
+              <% var reportTitle = `${maybe(reports[i], t('common.noName'), "name")} (${maybe(author[i], t('common.noneAuthor'), "name")}, ${maybe(reports[i], t('common.yearNotDefined'), "year")})` %>
+              <% if (reports[i].fileid) { %>
+                <%= App.models.Report.href(reports[i].id, reportTitle) %>
+              <% } else {%>
+                <%= reportTitle %>
+              <% } %>
+              <br>
+            <% }); %>
+            </div>
+          </dd>
+        <% } %>
+
+        <% if (publication.length) { %>
+          <dt><%= t('publication.singular') %>:</dt>
+          <dd>
+            <div>
+            <% _.each(publication, function(pub, i) { %>
+              <% var pubTitle = `${maybe(publication[i], t('common.noName'), "name")} (${maybe(pubAuthor[i], t('common.noneAuthor'), "name")}, ${maybe(publication[i], t('common.yearNotDefined'), "published_at")})` %>
+              <% if (publication[i].fileid) { %>
+                <%= App.models.Publication.href(publication[i].id, pubTitle) %>
+              <% } else {%>
+                <%= pubTitle %>
+              <% } %>
+              <br>
+            <% }); %>
+            </div>
+          </dd>
+        <% } %>
+
+        <dt><%= t("monument.count") %>:</dt>
+        <dd><%= _.size(monuments) %></dd>
+
+        <% if (resType[0].name === 'Раскопки' || resType[0].name === 'Разведка') { %>
+          <dt><%= t("excavation.genitivePl") %>:</dt>
+          <dd><%= _.reduce(excavations.excavations, function(size, list) {
+            return size + _.size(list)
+          }, 0) %>;
+          <%= t('common.area') %>
+          <%= _.reduce(excavations, function(area, list) {
+            return area + _.reduce(list, function(area, exc) {
+              return area + (exc.area || 0);
+            }, 0);
+          }, 0) %>
+          <%= t('common.metresInSq') %></dd>
+        <% } %>
+
+        <dt><%= t("artifact.genitivePl") %>:</dt>
+        <dd>
+          <% let artiCount = artifacts.length %>
+          <%= artiCount %>
+        </dd>
+      </dl>
+    </div>
+
+    <div id="monuments">
+      <div id="accordion">
+        <% var counter = 1 %>
+        <% _.each(monuments, function(monument, i) { %>
+          
+          <h4 class="accordion-header">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            <%= t('monument.singular') %> №<%= counter++ %>: <b><%= ctl(knowledges[i].monument_name) %></b>
+          </h4>
+          
+          <div class="accordion-content">
+            <dl>
+              <dt></dt>
+              <dd>
+                <a href="#monument/show/<%= monument.id %>">
+                  <%= t('goto.monument') %>
+                </a>
+              </dd>
+              <dt><%= t('common.nameByAuthor') %>:</dt>
+              <dd class="edit-field" data-for="Knowledge" data-type="text" data-id="<%=knowledges[i].id%>" data-field="monument_name">
+                <span><%= ctl(knowledges[i].monument_name) %></span>
+              </dd>
+              <dt><%= t('monument.prop.epoch') %>:</dt>
+              <dd><%= maybe(epochs[i][0], t('common.noData'), `${prefix}name`) %></dd>
+              <dt><%= t('monument.prop.type') %>:</dt>
+              <dd><%= maybe(monTypes[i][0], t('common.noData'), `${prefix}name`) %></dd>
+              <% if (cultures[i][0]) { %>
+                <dt><%= t('knowledge.prop.culture') %>:</dt>
+                <%= App.models.Culture.href(cultures[i][0].id, cultures[i][0][`${prefix}name`]) %>
+              <% } %>
+              <% if (knowledges[i].description) { %>
+                <dt><%= t('monument.description') %>:</dt>
+                <dd class="edit-field" data-for="Knowledge" data-type="textarea" data-id="<%=knowledges[i].id%>" data-field="description">
+                  <span><%= ctl(knowledges[i].description) %></span>
+                </dd>
+                <% if (knowledges[i].layerDesc) { %>
+                  <dd class="edit-field" data-for="Knowledge" data-type="textarea" data-id="<%=knowledges[i].id%>" data-field="layerDesc">
+                    <span><%= knowledges[i].layerDesc %></span>
+                  </dd>
+                <% } %>
+              <% } %>
+              <dt><%= t('artifact.found') %>:</dt>
+              <dd>
+                <% if (artifacts[i] && artifacts[i].length > 0) { %>
+                  <% var length = artifacts[i].length %>
+                  <% _.each(artifacts[i], function(artifact, i) { %>
+                    <a href="#artifact/show/<%= artifact.id %>">
+                      <%= ctl(artifact.name) %>
+                    </a>
+                    <% if (i < length-1) { %>
+                    ,
+                  <% } %>
+                <% }); %>
+                <% } else { %>
+                  <%= t('common.noData') %>
+                <% } %>
+              </dd>
+
+              <dt><%= t('common.archExc') %>:</dt>
+              <dd>
+                <% if (excavations[i] && excavations[i].length > 0) { %>
+                  <% var length = excavations[i].length %>
+                  <% _.each(excavations[i], function(excavation, i) { %>
+                    <%= maybe(excavation, `${ t('common.withoutName') } ${i}`, "name")%>
+                    <% if (excavation.area) { %>
+                      (<%= excavation.area %> <%= t('common.metresInSq') %>)
+                    <% } %>
+                    <% if (i < length-1) { %>
+                    ,
+                    <% } %>
+                  <% }); %>
+                <% } else { %>
+                  <%= t('common.noData') %>
+                <% } %>
+              </dd>
+            </dl>
+          </div>
+
+        <% }) %>
+      </div>
+    </div>
+
+    <div id="artifacts">
+      <% if (artiCount) { %>
+        <dl>
+          <dt><%= t('artifact.found') %>:</dt>
+          <dd>
+            <%= _.compact(_.map(artifacts, function(arti, i) {
+              let title = `${arti.name} (${author[0].name}, ${research.year})`;
+              return App.models.Artifact.href(arti.id, ctl(title));
+            })).join(", <br>") %>
+          </dd>
+        </dl>
+      <% } %>
+    </div>
+
+    <div id="radiocarbon">
+      <%= _.compact(_.map(carbon, function(car, i) {
+        let title = `${car.name} (R-date BP: ${car.date}, sigma: ${car.s}, material: ${carbonMaterial[i].name})`;
+        return App.models.Radiocarbon.href(car.id, ctl(title));
+      })).join(", <br>") %>
+    </div>
+
+    <div id="heritages">
+      <% 
+      let hs = [];
+      if (heritages.length) {
+        _.each(heritages, (her) => {
+          if (her && her[0]) {
+            hs.push(App.models.Heritage.href(her[0].id, ctl(her[0].name)))
+          }
+        })
+      } %>
+      <%= _.uniq(hs).join("<br>") %>
+    </div>
+
+    <div id="excavations"> 
+      <% 
+      let excs = [];
+      _.each(excavations, function(resExc, i) {
+        _.each(resExc, function(exc) {
+          let area = exc.area || 0;
+          let name = exc.name || t('common.withoutName');
+          let boss = exc.boss || t('common.unknown');
+          excs.push(
+            App.models.Excavation.href(exc.id, ctl(`
+              ${name} - ${area}${ t('common.metresInSq') } (${author[0].name}, ${research.year}), ${t('excavation.boss').toLowerCase()} : ${boss}
+            `))
+          );
+        })
+      })
+      %>
+      <%= _.uniq(excs).join("<br>") %>
+    </div>
+
+    <div id="cultures">
+      <div id="accordion">
+        <% counter = 1 %>
+        <% _.each(resCult, function(cult, i) { %>
+          <h4 class="accordion-header">
+            <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>
+            <%= t('culture.number') %><%= counter++ %>: <b><%= ctl(cult.name) %></b>
+          </h4>
+          
+          <div class="accordion-content">
+            <dl>
+              <dd>
+                <a href="#culture/show/<%= cult.id %>">
+                  <%= t('goto.culture') %>
+                </a>
+              </dd>
+
+              <% if (cultDate[i] && cultKnow[i]) { %>
+                <dt><%= t('date.singular') %>:</dt>
+                <dd><%= cultDate[i].name %>: <%= cultKnow[i].dateBottom %> — <%= cultKnow[i].dateTop %></dd>
+              <% } %>
+
+              <% if (cultKnow[i]) { %>
+                <dt><%= t('common.description') %>:</dt>
+                <dd><%= cultKnow[i].description %></dd>
+              <% } %>
+            </dl>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div id="topos">
+      <%= (topos[0]) ? App.views.functions.getTopoCard(topos[0]) : "" %>
+    </div>
+
+    <div id="another">
+      <%= t('common.futureTab') %>
+    </div>
+  </div>
+</div>
+
+
+<div id="map" class="maps">
+</div>

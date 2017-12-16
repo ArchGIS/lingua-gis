@@ -1,0 +1,703 @@
+{ 
+  "common": {
+    "general": "General Info",
+    "name": "Name",
+    "year": "Year",
+    "download": "Download",
+    "downloadFile": "Download file",
+    "addFile": "Add file",
+    "file": "File",
+    "description": "Description",
+    "culture": "Cultural attribution",
+    "storage": "Storage Institution",
+    "value": "Value",
+    "spatialHistory": "Coordinates",
+    "entity": "Entity",
+    "create": "Create",
+    "formAuthor": "Enter an existing research author",
+    "formReport": "Select an existing report",
+    "formPub": "Select an existing publication",
+    "reportName": "Report title",
+    "next": "Further",
+    "belongsToSite": "Belongs to the archaeological site",
+    "accuracy": "Mapping accuracy",
+    "accurancy": "Mapping accuracy",
+    "collectionName": "Collection name",
+    "numberInBook": "№ on the book of receipts",
+    "inventNumber": "Inventory number",
+    "specialNumber": "№ of special accounting",
+    "listingNumber": "Field listing number",
+    "cipher": "Field Cipher",
+    "yearOfAddToColl": "Year of adding to the collection",
+    "addPhoto": "Add photo",
+    "addAuthor": "Adding a new author",
+    "addReport": "Adding a new report",
+    "collectionStorage": "Institution - storage location of the collection",
+    "newCulture": "New cultural interpretation",
+    "chooseCulture": "Choose culture interpretation",
+    "accur": "Accuracy",
+    "clarifyCoords": "Clarify the coordinates",
+    "addCulture": "Add culture layer",
+    "noName": "No name",
+    "notDefined": "Not specified",
+    "notSpecif": "Not indicated",
+    "missing": "Missing",
+    "noneAuthor": "author unknown",
+    "yearNotDefined": "year is not specified",
+    "area": "Total area",
+    "metresInSq": "m²",
+    "nameByAuthor": "The name given by the researcher",
+    "noData": "No data",
+    "noCulture": "No culture",
+    "archExc": "Archaeological excavations",
+    "withoutName": "untitled",
+    "unknown": "unknown",
+    "futureTab": "Blank for future tabs",
+    "noInfo": "No information",
+    "section": "Site",
+    "withoutType": "without type",
+    "noDescription": "No description",
+    "unknown1": "Unknown",
+    "belongsToSites": "Belongs to archaeological site",
+    "date": "Date of creation",
+    "notFilled": "Not filled",
+    "actualCoords": "actual coordinates",
+    "createdDate": "Date added",
+    "yes": "Yes",
+    "no": "No",
+    "common": "common",
+    "year1": "annual",
+    "choosePub": "Select an existing publication",
+    "mapDate": "Map date",
+    "name1": "Name",
+    "address": "Address",
+    "status": "Status",
+    "protCateg": "Protection category",
+    "protDoc": "Type of document on state protection",
+    "protDocNumber": "Number of the document on state protection",
+    "protDocDate": "Date of the document on state protection",
+    "borderDescr": "Borders description",
+    "regNumberBTI": "BTI registration number",
+    "passNumBTI": "Passport number of BTI",
+    "passNumDateBTI": "Date of issue of the passport of BTI",
+    "ownType": "Own type",
+    "orderType": "Type of order",
+    "okatoOwnerCode": "Code of owner (administrator) for OKATO",
+    "ownerINN": "TIN of the owner (manager)",
+    "ownerKPP": "PPC of the owner (manager)",
+    "ownerDocType": "Type of document transferring the object to the owner (manager)",
+    "ownerDocDate": "Date of the document of transfer to the owner (manager)",
+    "ownerDocNum": "Number of the document transferring to the owner (manager)",
+    "ownStartDate": "Date of the beginning of possession (order) of the document on protection",
+    "ownEndDate": "Date of the end of possession (order) under the document on protection",
+    "protDocType": "Type of security document",
+    "protDocDate1": "Date of the protection document",
+    "protDocNum": "Number of the protection document",
+    "functionalFirst": "Use for original functional purpose",
+    "funcPurpose": "Functional purpose",
+    "siteAccess": "Accessibility of the archaeological site",
+    "useType": "Type of use",
+    "document": "Document",
+    "existDoc": "Select an existing document",
+    "addNewRegDoc": "Add a new registration document",
+    "addSurveyMap": "Add survey map",
+    "protSubject": "Subject of protection",
+    "docFile": "Document file",
+    "cultureLayer": "The cultural layer",
+    "nothingIsSelected": "Nothing was selected",
+    "site3Dmodel": "3D model"
+  },
+
+  "culture": {
+    "info": "Culture info",
+    "singular": "Culture",
+    "plural": "Cultures",
+    "add": "Add culture",
+    "number": "Culture #",
+    "cultName": "Culture name",
+    "description": "Culture description",
+    "resChrono": "General chronological frame of the culture (context)",
+    "monChrono": "Chronological frame of the context"
+  },
+
+  "examples": {
+    "chooseCoords": "Press the button to select the coordinates. The format for manual filling: 55.5555, 49.5656.",
+    "maxSizePhoto": "The maximum photo size is 10 MB",
+    "maxSizeDoc": "The maximum document size is 300 MB"
+  },
+
+  "admin": {
+    "panel": "Administrative panel",
+    "download": "Administrative panel",
+    "filter": "Filter by name",
+    "filterByCulture": "Filter by culture",
+    "find": "Find",
+    "culture": "Culture",
+    "edit": "Edit",
+    "delete": "Delete"
+  },
+
+  "LiteratureRef": {
+    "plural": "References",
+    "prop": {
+      "pages": "Pages"
+    }
+  },
+  
+  "publication": {
+    "singular": "Publication",
+    "plural": "Publications",
+    "new": "Adding a new publication",
+    "name": "Publication title",
+    "type": "Type of publication",
+    "file": "Publication file",
+    "more": "Additional information about the publication",
+    "editCont": "Continuing edition",
+    "confName": "Conference title",
+    "confDateStart": "Conference start date",
+    "confDateEnd": "End date of the conference",
+    "seriesName": "Series name",
+    "prop": {
+      "isbn": "ISBN",
+      "issn": "ISSN",
+      "title": "Title",
+      "udc": "UDC",
+      "year": "Publication year",
+      "type": "Edition type",
+      "pages": "Pages, in total",
+      "publisher": "Publisher",
+      "jourName": "Journal",
+      "collName": "The title of the collection",
+      "monogrName": "Title of monograph",
+      "volume": "Volume",
+      "number": "Number",
+      "edition": "Issue",
+      "link": "Publication link"
+    }
+  },
+
+  "case": {
+    "monumentsByArchMap": "Archaeological sites after archaeological map data"
+  },
+  
+  "goto": {
+    "research": "Go to research",
+    "culture": "Go to culture",
+    "monument": "Go to archaeological site"
+  },
+
+  "epoch": {
+    "singular": "Epoch"
+  },
+
+  "import": {
+    "subject": "Data to import",
+    "data": "Importing data"
+  },
+  
+  "coord": {
+    "plural": "Coordinates",
+    "x": "N",
+    "y": "E"
+  },
+  
+  "e404": "Page isn't found",
+  "work-post": "Должность",
+  "since": "since",
+
+  "ArchMap": {
+    "singular": "Archaeological map"
+  },
+
+  "ArchMapRecord": {
+    "n": "Archaeological map number",
+    "pages": "Archaeological map page"
+  },
+
+  "ResearchRef": {
+    "plural": "Related research"
+  },
+  
+  "selection": {
+    "singular": "Selection",
+    "plural": "Selections",
+    "getRadiocarbon": "Get absolute chronology data"
+  },
+
+  "excavation": {
+    "singular": "Excavation",
+    "second": "Excavation",
+    "plural": " Excavations",
+    "genitivePl": " Excavations",
+    "info": " Excavation info",
+    "infoPlural": "Information about excavations",
+    "withoutMon": "Excavations outside archaeological sites",
+    "name": "Name of excavation",
+    "notChoosed": "excavation not selected",
+    "coords": "Coordinates of the selected excavation",
+    "author": "Author",
+    "year": "Excavation year",
+    "boss": "The supervisor",
+    "area": "Area (m²)",
+    "section": "Find area (grid reference)",
+    "depth": "Depth (cm)",
+    "objectName": "Feature (arhaeological complex)",
+    "depth_": "Depth",
+    "area1": "Excavation area",
+    "add": "Add an excavation",
+    "new": "Adding a new excavation",
+    "area2": "Excavated area"
+  },
+
+  "research": {
+    "year": "Year of research",
+    "yearLess": " Year of research before ...",
+    "yearMore": " Year of research after ...",
+    "description": "Research description",
+    "type": "Research type",
+    "singular": "Research",
+    "plural": " Researches",
+    "genitivePl": " Researches",
+    "new": "Input research data",
+    "info": "Research information", 
+    "author": "Research author",
+    "content": "Contents of the research",
+    "more": "Additional information about the research",
+    "prop": {
+      "description": "Description",
+      "year": "Year of research",
+      "type": "Type",
+      "name": "Title"
+    },
+    "types": {
+      "excavation": "Excavation",
+      "survey": "Survey",
+      "analysis": "Analysis"
+    }
+  },
+  
+  "city": {
+    "singular": "City",
+    "plural": "Cities"
+  },
+
+  "coauthor": {
+    "singular": "Co-author",
+    "plural": "Co-author"
+  },
+
+  "author": {
+    "name": "Author, name",
+    "researcher": "Researcher",
+    "singular": "Author",
+    "plural": "Authors",
+    "addCoauthor": "Add collaborator",
+    "moreInfo": "Additional information about the author",
+    "unknown": "Unknown author",
+    "prop": {
+      "name": "Name",
+      "year": "Year of birth",
+      "publications": "Publication",
+      "biography": "Biography"
+    }
+  },
+  
+  "heritage": {
+    "singular": "Cultural heritage site",
+    "name": "Name of heritage site",
+    "full": " Cultural heritage site",
+    "info": " Cultural heritage site info",
+    "new": "Input heritage site data",
+    "code": "Cultural heritage object code",
+    "content": "Information about the object of cultural heritage"
+  },
+
+  "doc": {
+    "registration": {
+      "singular": "Order of cultural heritage registration",
+      "plural": " Orders of cultural heritage registration "
+    },
+    "surveyMap": {
+      "singular": "Registration form",
+      "plural": " Registration forms",
+      "general": "General Info",
+      "use": "Usage",
+      "state": "Technical condition"
+    }
+  },
+
+  "topoplan": {
+    "singular": "Plan of a site",
+    "plural": " Plans of a site ",
+    "author": "Author of topography",
+    "year": "Year of topography",
+    "no": "No topography",
+    "add": "Add topoplan"
+  },
+
+  "photo": {
+    "singular": "Photo",
+    "plural": "Photo",
+    "sitePart": "Element of the archaeological site",
+    "foreshortening": "Foreshortening",
+    "no": "No photos"
+  },
+
+  "monument": {
+    "singular": " Archaeological site",
+    "plural": " Archaeological sites",
+    "new": "Input archaeological site data",
+    "info": "Archeological site info",
+    "infoPlural": "Archeological sites info",
+    "count": "Number of archaeological sites",
+    "excavation": "Excavation",
+    "name": " Archaeological site name",
+    "names": "Archaeological site names",
+    "culture": "Archaeological site culture",
+    "monByNum": "Archaeological site #",
+    "layerDesc": "Cultural layer description",
+    "choose": "Select an existing archaeological site",
+    "coords": "Coordinates of the selected archaeological site",
+    "notChoosed": "archaeological site not selected",
+    "description": "Description of the archaeological site",
+    "add": "Adding a new archaeological site",
+    "add1": "Add archaeological site",
+    "type": "Type of archaeological site",
+    "typess": "Types of archaeological sites",
+    "layersAll": "Total cultural layers",
+    "layersTop": "Overlying layers",
+    "layersBot": "Underlying layers",
+    "layersHere": "Contemporary layers",
+    "prop": {
+      "type": " Archaeological site type",
+      "epoch": "Epoch",
+      "x": "N",
+      "y": "E",
+      "ArchMapRef.n": "Archaeological map number",
+      "ArchMapRef.page": " Archaeological map page"
+    },
+    "types": [
+      " Undefined",
+      "Hillfort",
+      "Settlement",
+      "Find",
+      "Burial",
+      "Cemetery",
+      "Architecture",
+      "Burial ground",
+      "Burial mounds",
+      "Burial mound",
+      "Hoard",
+      "Production site",
+      "Camp"
+    ]
+  },
+  
+  "radiocarbon": {
+    "singular": "Radiocarbon dating",
+    "plural": "Radiocarbon datings",
+    "index": "Index",
+    "date": "Date BP",
+    "stratigraphic": "Stratigraphic characteristic of the host layer",
+    "genesis": "Genesis of the enclosing sediments",
+    "material": "Sample material",
+    "byNum": "Radiocarbon dating #",
+    "add": "Add radiocarbon dating",
+    "facies": "Facies",
+    "dateType": "Date type",
+    "create": "Input radiocarbon data",
+    "depth": "Depth",
+    "relativeDepth": "Relative altitude, cm",
+    "sampleDesc": "Sample description"
+  },
+
+  "report": {
+    "singular": "Report",
+    "plural": "Reports",
+    "storage": "Archive",
+    "year": "Year of reporting",
+    "file": "Report file",
+    "moreInfo": "Additional information about the report",
+    "orgStorage": "Institution - the storage location of the report",
+    "newCollection": "New collection",
+    "not": "No report",
+    "prop": {
+      "number": "Number",
+      "description": "Description",
+      "year": "Year",
+      "type": "Type"
+    }
+  },
+    
+  "year": {
+    "year2": "year"
+  },
+
+  "knowledge": {
+    "singular": " Archaeological site description according research data",
+    "prop": {
+      "name": "Name",
+      "culture": "Cultural attribution after the researcher",
+      "description": " Archaeological site description",
+      "epoch": "Epoch"
+    }
+  },
+
+  "object": {
+    "singular": "Feature"
+  },
+
+  "date": {
+    "singular": "Date",
+    "plural": "Date",
+    "from": "From",
+    "to": "To"
+  },
+
+  "collection": {
+    "singular": "Collection",
+    "plural": "Collections",
+    "inventory": "Museum register"
+  },
+
+  "artifact": {
+    "singular": "Artifact",
+    "plural": " Artifacts",
+    "genitivePl": " Artifacts",
+    "monumentFound": "Found on archaeological site",
+    "yearFound": "Year of finding",
+    "researches": "Researches",
+    "description": "Description",
+    "material": "Material",
+    "category": "Category",
+    "size": "Size",
+    "weight": "Weight",
+    "tech": "Production technic",
+    "keywords": "Keywords",
+    "placeFound": "Finding place",
+    "storage": "Storage place",
+    "create": "Input artifact data",
+    "name": "Name",
+    "found": "Found artifacts",
+    "number": "Number of artifacts",
+    "count": "Found artifacts"
+  },
+
+  "search": {
+    "bigSearch": "Advanced search",
+    "head": "Quick search",
+    "subject": "Search subject",
+    "showResults": "Show the results",
+    "criteria": "Search filters",
+    "criterion": "Filter",
+    "addCriterion": "Add filter",
+    "createSelection": "Create selection",
+    "nameSelection": "Selection name",
+    "noResults": "Nothing was found",
+    "resultsCount": "Results",
+    "fill": "Fill atleast one input"
+  },
+  
+  "criteria": {
+    "author": {
+      "name": "Author: name",
+      "job": " Author: institute affiliation"
+    },
+    "artifact": {
+      "category": "Artifact: category",
+      "culture": "Artifact: culture",
+      "material": "Artifact: material",
+      "name": "Artifact: name",
+      "photoBefore": "Artifact: images, made before…",
+      "photoAfter": "Artifact: images, made after…",
+      "foundBefore": "Artifact: found before…",
+      "foundAfter": "Artifact: found after…"
+    },
+    "excavation": {
+      "areaMore": "Excavations: total area more than…",
+      "areaLess": "Excavations: total area less than…",
+      "objName": "Excavations: feature name",
+      "bossName": "Excavations: excavation leader"
+    },
+    "research": {
+      "after": "Researches: undertook before than…",
+      "before": "Researches: undertook later than…",
+      "type": "Researches: type"
+    },
+    "collection": {
+      "storage": "Collection: storage institution",
+      "name": " Collection: name"
+    },
+    "heritage": {
+      "security": "Heritage site: protection category",
+      "region": "Heritage site: address(region)",
+      "after": "Heritage site: protected since…",
+      "before": "Heritage site: was protected before…"
+    },
+    "monument": {
+      "culture": "Archaeological site: culture",
+      "name": "Archaeological site: name",
+      "coords": "Archaeological site: coordinates",
+      "type": "Archaeological site: type",
+      "topoAfter": "Archaeological site: plans of the site made after…",
+      "topoBefore": "Archaeological site: plans of the site made before…",
+      "photoAfter": "Archaeological site: photos of the site made before …",
+      "photoBefore": "Archaeological site: photos of the site made after…",
+      "epoch": "Archaeological site: epoch"
+    },
+    "publication": {
+      "place": "Publication: place",
+      "pubName": " Publication: book title",
+      "title": " Publication: title"
+    }
+  },
+
+  "nav": {
+    "signout": "Sign out",
+    "profile": "My profile"
+  },
+
+  "wizard": {
+    "case": {
+      "monumentByArchMap": "Archaeological site from archaeological map"
+    },
+    "whatIs": "What is being created?",
+    "createBy": "Based on what?",
+    "start": "Start filling in"
+  },
+  
+  "titles": {
+    "wizard": {
+      "create-data": "Create data",
+      "about": "About the system",
+      "createSample": "Selections",
+      "download": "Upload data",
+      "importData": "Data input",
+      "getData": "Download data",
+      "more": "More",
+      "team": "Team"
+    },
+    "search": {
+      "index": "Search"
+    },
+    "import": {
+      "xlsx": "Import data from .xlsx"
+    }
+  },
+
+  "enums": {
+    "epoch": [
+      "Paleolith",
+      "Mesolith",
+      "Neolith",
+      "Chalkolith",
+      "Bronze age",
+      "Early Iron Age",
+      "Great Migration Period",
+      "Middle Ages",
+      "New Time"
+    ]
+  },
+
+  "organization": {
+    "singular": "Institution",
+    "plural": "Institutions",
+    "prop": {
+      "name": "Name"
+    }
+  },
+
+  "mainpage": {
+    "name": "Archaeological Research Geographic Information System \"ArchGIS\"",
+    "welcome": "Welcome to the ArchGIS Information System!",
+    "counts": "At the moment in the system are taken into account",
+    "heritage": "Objects of cultural heritage",
+    "site": "Archaeological sites",
+    "research": "Archaeological researches",
+    "artifact": "Artifacts",
+    "radiocarbon": "Radiocarbon dates",
+    "report": "Reports on archaeological fieldwork",
+    "monography": "Monographies",
+    "article": "Articles",
+    "archiveDoc": "Archive documents",
+    "author": "Researchers"
+  },
+
+  "team": {
+    "director": "Project director",
+    "developers": "Developer team",
+    "dataMakers": "Content team",
+    "member1":{
+      "name": "Ayrat Sitdikov",
+      "desc1": "PhD, corresponding member of the Tatarstan Academy of Sciences",
+      "desc2": "Project director",
+      "desc3": "- Director of the High School of History and World Heritage of KFU",
+      "desc4": "- Director of the Khalikov Institute of Archaeology of Tatarstan Academy of Sciences",
+      "desc5": "- Head of the Tatarstan history, archaeology and ethnorgaphy department of KFU"
+    },
+    "member2":{
+      "name": "Leonid Vyazov",
+      "desc1": "PhD, Project manager",
+      "desc2": "Leading researcher, Kazan Federal University",
+      "desc3": "Senior researcher, Institute of Archaeology, Tatarstan Academy of Scienses",
+      "desc4": "Archaeology of Migration period, GIS in archaeology, landscape archaeology"
+    },
+    "member3":{
+      "name": "Anton Marchenko",
+      "desc1": "Technical lead",
+      "desc2": "Lecturer at Software engineering department, Higher school of ITIS KFU",
+      "desc3": "Software engineering, algorithms, data structures and computational complexity, intelligent tutoring systems"
+    },
+    "member4":{
+      "name": "Natalia Selezneva",
+      "desc1": "Project manager",
+      "desc2": "Laboratory assistant researcher"
+    },
+    "member5":{
+      "name": "Delius Farkhullin",
+      "desc1": "Developer",
+      "desc2": "Software Engineer",
+      "desc3": "Artificial intelligence, neurobiology"
+    },
+    "member6":{
+      "name": "Maxim Efimov",
+      "desc1": "Web-developer",
+      "desc2": "Software Engineer"
+    },
+    "member7":{
+      "name": "Nikita Gladnev",
+      "desc1": "KFU student, department of management, economy and finances",
+      "desc2": "Geoinformation systems"
+    },
+    "member8":{
+      "name": "Alevtina Vandrohova",
+      "desc1": "Student",
+      "desc2": "The study of the Hunnish culture"
+    },
+    "member9":{
+      "name": "Ekaterina Pashina",
+      "desc1": "Laboratory researcher of the museum of archeology, A.Kh. Khalikov Institute of archeology of the Academy of sciences of the Republic of Tatarstan",
+      "desc2": "The medieval history, military-political and social history of city-fortresses of Middle Povolzya in the second half of the XVI the beginning of XVIII centuries"
+    },
+    "member10":{
+      "name": "Elina Ilyasova",
+      "desc1": "KFU student, department of management, economy and finances ",
+      "desc2": "Geoinformation systems"
+    },
+    "member11":{
+      "name": "Darya Petrova",
+      "desc1": "Assistant researcher, Institute of archaeology, Tatarstan Academy of Sciences",
+      "desc2": "Imenkovo culture, Migration period, cremation burial rites, GIS"
+    },
+    "member12":{
+      "name": "Guzel Sayfutdinova",
+      "desc1": "Head of Department of Geoinformation Technologies of Institute of Archeology of A.H. Halikov Academies of Sciences of the Republic Tatarstan",
+      "desc2": "Geoinformation systems and technologies"
+    },
+    "member13":{
+      "name": "Philip Philippov",
+      "desc1": "KFU student",
+      "desc2": "Paleolith"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="content">  
+  <h2><%= t("selection.singular") %> "<%= selection.name %>"</h2>
+
+  <button class="btn btn-primary" id="get-all-radiocarbon">
+    <%= t("selection.getRadiocarbon") %>
+  </button>
+  <br>
+  <div class="ct-chart ct-perfect-fourth" style="height: 0px"></div>
+  <h3><a download="radiocarbon_datings.txt" id="test" style="display: none;"><%= t("common.downloadFile") %></a></h3>
+  <br>
+  <br>
+
+  <% _.each(monuments, function(mon, i) { 
+    let monTitle = `${knowledges[i][0].monument_name} (${epochs[i][0].name}, ${monTypes[i][0].name})` %>
+    <%= App.models.Monument.href(mon.id, ctl(monTitle)) %>
+    <br>
+  <% }) %>
+
+<div>
+
+<div id="map" class="maps"></div>

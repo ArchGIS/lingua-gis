@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="NOODP,NOYDIR"/>
+    <title>ArchGIS</title>
+    
+    <!-- styles -->
+    <link rel="stylesheet" href="/vendor/pure-min.css">
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/opentip.css">
+    <link rel="stylesheet" href="/vendor/jquery-ui.css">
+    <link rel="stylesheet" href="/web_client/css/main.css">
+    <link rel="stylesheet" href="/web_client/css/map-cluster-icons.css">
+    <link rel="stylesheet" href="/vendor/leaflet.css">
+    <link rel="stylesheet" href="/vendor/leaflet-plugins/leaflet.bookmarks.css">
+    <link rel="stylesheet" href="/vendor/leaflet-geocoder/Control.Geocoder.css">
+    <link rel="stylesheet" href="/vendor/leaflet-measure/measure.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.0.5/dist/MarkerCluster.Default.css">
+
+    <link rel="stylesheet" href="/web_client/css/chartist.min.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- icon -->
+    <link rel="shortcut icon" href="/web_client/img/favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+    <div id="navigation"></div>
+    <div id="body"></div>
+    
+    <footer>
+      <!-- <i class="fa fa-copyright"></i>
+      Arch Gis 2016 -->
+    </footer>
+    
+    <div id="modalWindow" class="modal">
+      <h3>
+        Выберите что делать дальше:
+      </h3>
+
+      <a href="#wizard/create_data" class="btn btn-default">
+        Создать новую сущность
+      </a>
+
+      <a id="toObject" href="#" class="btn btn-default">
+        Перейти к созданной сущности
+      </a>
+    </div>
+
+    <!-- vendor js -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.ui.min.js"></script>
+    <script src="/vendor/js/easyModal.js"></script>
+    <script src="/vendor/js/underscore.min.js"></script>
+    <script src="/vendor/js/backbone.min.js"></script>
+    <script src="/vendor/js/opentip.min.js"></script>
+    <script src="/vendor/js/leaflet-src.js"></script>
+    <script src="/vendor/js/jquery.ui.autocomplete.html.js"></script>
+    <script src="/vendor/leaflet-plugins/layer/Layer.Deferred.js"></script>
+    <script src="/vendor/leaflet-plugins/Leaflet.Bookmarks.js"></script>
+    <script src="/vendor/leaflet-geocoder/Control.Geocoder.js"></script>
+    <script src="/vendor/leaflet-measure/leaflet-measure.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    <script src="https://unpkg.com/leaflet.markercluster@1.0.5/dist/leaflet.markercluster-src.js"></script>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    
+    <!-- app src -->
+    <!-- init -->
+    <script src="/web_client/js/init/app.js"></script>
+    <script src="/web_client/js/init/locale.js"></script>
+    <script src="/web_client/js/init/store.js"></script>
+    <script src="/web_client/js/init/fn.js"></script>
+    <script src="/web_client/js/init/widgetMaker.js"></script>
+    <script src="/web_client/js/init/blockMaker.js"></script>
+    <script src="/web_client/js/init/page.js"></script>
+    <script src="/web_client/js/init/url.js"></script>
+    <script src="/web_client/js/init/form.js"></script>
+    <script src="/web_client/js/init/template.js"></script>
+    <script src="/web_client/js/init/navbar.js"></script>
+    <script src="/web_client/js/init/views.js"></script>
+    <script src="/web_client/js/init/controllers.js"></script>
+    <script src="/web_client/js/init/models.js"></script>
+    <!-- widgets -->
+    <script src="/web_client/js/widgets/toggler.js"></script>
+    <script src="/web_client/js/widgets/search_line.js"></script>
+    <script src="/web_client/js/widgets/table.js"></script>
+    <script src="/web_client/js/widgets/accordion_header.js"></script>
+    <!-- blocks -->
+    <script src="/web_client/js/blocks/coordpicker.js"></script>
+    <!-- utils -->
+    <script src="/web_client/js/utils/monumentFn.js"></script>
+    <!-- models -->
+    <script src="/web_client/js/models/proto.js"></script>
+    <script src="/web_client/js/models/baseModel.js"></script>
+    <script src="/web_client/js/models/organization.js"></script>
+    <script src="/web_client/js/models/base.js"></script>
+    <script src="/web_client/js/models/epoch.js"></script>
+    <script src="/web_client/js/models/culture.js"></script>
+    <script src="/web_client/js/models/artifact.js"></script>
+    <script src="/web_client/js/models/arch_map.js"></script>
+    <script src="/web_client/js/models/arch_map_record.js"></script>
+    <script src="/web_client/js/models/collection.js"></script>
+    <script src="/web_client/js/models/knowledge.js"></script>
+    <script src="/web_client/js/models/monument.js"></script>
+    <script src="/web_client/js/models/radiocarbon.js"></script>
+    <script src="/web_client/js/models/publication.js"></script>
+    <script src="/web_client/js/models/author.js"></script>
+    <script src="/web_client/js/models/research.js"></script>
+    <script src="/web_client/js/models/research_ref.js"></script>
+    <script src="/web_client/js/models/report.js"></script>
+    <script src="/web_client/js/models/file.js"></script>
+    <script src="/web_client/js/models/literature_ref.js"></script>
+    <script src="/web_client/js/models/city.js"></script>
+    <script src="/web_client/js/models/heritage.js"></script>
+    <script src="/web_client/js/models/excavation.js"></script>
+    <script src="/web_client/js/models/artifact_category.js"></script>
+    <script src="/web_client/js/models/artifact_material.js"></script>
+    <!-- controllers -->
+    <script src="/web_client/js/controllers/mainpage.js"></script>
+    <script src="/web_client/js/controllers/admin.js"></script>
+    <script src="/web_client/js/controllers/download.js"></script>
+    <script src="/web_client/js/controllers/wizard.js"></script>
+    <script src="/web_client/js/controllers/collection.js"></script>
+    <script src="/web_client/js/controllers/import_xlsx.js"></script>
+    <script src="/web_client/js/controllers/monument.js"></script>
+    <script src="/web_client/js/controllers/excavation.js"></script>
+    <script src="/web_client/js/controllers/artifact.js"></script>
+    <script src="/web_client/js/controllers/radiocarbon.js"></script>
+    <script src="/web_client/js/controllers/research.js"></script>
+    <script src="/web_client/js/controllers/heritage.js"></script>
+    <script src="/web_client/js/controllers/publication.js"></script>
+    <script src="/web_client/js/controllers/culture.js"></script>
+    <script src="/web_client/js/controllers/search.js"></script>
+    <script src="/web_client/js/controllers/bigSearch.js"></script>
+    <script src="/web_client/js/controllers/selection.js"></script>
+    <script src="/web_client/js/controllers/author.js"></script>
+    <script src="/web_client/js/controllers/report.js"></script>
+    <script src="/web_client/js/controllers/organization.js"></script>
+    <script src="/web_client/js/controllers/files.js"></script>
+    <!-- router -->
+    <script src="/web_client/js/init/router.js"></script>
+    <!-- views -->
+    <script src="/web_client/js/views/map.js"></script>
+    <script src="/web_client/js/views/monument.js"></script>
+    <script src="/web_client/js/views/admin.js"></script>
+    <script src="/web_client/js/views/download.js"></script>
+    <script src="/web_client/js/views/collection.js"></script>
+    <script src="/web_client/js/views/author.js"></script>
+    <script src="/web_client/js/views/report.js"></script>
+    <script src="/web_client/js/views/research.js"></script>
+    <script src="/web_client/js/views/heritage.js"></script>
+    <script src="/web_client/js/views/excavation.js"></script>
+    <script src="/web_client/js/views/artifact.js"></script>
+    <script src="/web_client/js/views/radiocarbon.js"></script>
+    <script src="/web_client/js/views/culture.js"></script>
+    <script src="/web_client/js/views/search.js"></script>
+    <script src="/web_client/js/views/bigSearch.js"></script>
+    <script src="/web_client/js/views/selection.js"></script>
+    <script src="/web_client/js/views/create_data.js"></script>
+    <script src="/web_client/js/views/publication.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<div class="content-full">  
+  <h2><%= t("admin.panel") %></h2>
+
+  <div class="form-group short">
+    <label for="entity-selector"><%= t("common.entity") %></label>
+    <select class="form-control" id="entity-selector">
+    	<option value="Author"><%= t("author.singular") %></option>
+    	<option value="Research"><%= t("research.singular") %></option>
+    	<option value="Monument"><%= t("monument.singular") %></option>
+      <option value="Artifact"><%= t("artifact.singular") %></option>
+    	<option value="Radiocarbon"><%= t("radiocarbon.singular") %></option>
+    	<option value="Excavation"><%= t("excavation.second") %></option>
+    	<option value="Heritage"><%= t("heritage.singular") %></option>
+    	<option value="Epoch"><%= t("monument.prop.epoch") %></option>
+    	<option value="Culture"><%= t("admin.culture") %></option>
+    	<option value="Report"><%= t("report.singular") %></option>
+    	<option value="Publication"><%= t("publication.singular") %></option>
+    	<option value="City"><%= t("city.singular") %></option>
+    	<option value="Organization"><%= t("organization.singular") %></option>
+    </select>
+  </div>
+
+  <div class="form-group short">
+    <label for="entity-name-input"><%= t("admin.filter") %></label>
+    <input class="form-control" id="entity-name-input">
+  </div>
+
+  <button id="show-button" class="btn btn-primary">
+    <i class="fa fa-cogs"></i>
+    <%= t("admin.find") %>
+  </button>
+
+  <table class="pure-table" id="table-admin">
+    <thead>
+      <tr id="headers">
+      </tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+</div>

@@ -1,0 +1,117 @@
+<div class="content">
+  <h2><%= t('radiocarbon.singular') %></h2>
+  
+  <div class="tabs">
+    <ul>
+      <li><a href="#common"><%= t('common.general') %></a></li>
+      <li><a href="#researches"><%= t('research.plural') %></a></li>
+      <li><a href="#photos"><%= t('photo.plural') %></a></li>
+      <li><a href="#another">*</a></li>
+    </ul>
+
+    <div id="common">
+      <dl>
+        <dt><%= t('radiocarbon.index') %>:</dt>
+        <dd><%= ctl(carbon.name) %></dd>
+
+        <% if (knowledges[0]) { %>
+          <% let monCult = (culture[0][0]) ? culture[0][0].name : t('common.noCulture') %>
+          <% let monTitle = `${ctl(knowledges[0].monument_name)} (${epochs[0][0].name}, ${monCult})` %>
+          <dt><%= t('monument.singular') %>:</dt>
+          <dd><%= App.models.Monument.href(monuments[0].id, monTitle) %></dd>
+        <% } %>
+
+
+        <dt><%= t('radiocarbon.dateType') %>:</dt>
+        <dd><%= maybe(dateType[0].name, t('common.noData')) %></dd>
+        
+        <dt><%= t('radiocarbon.date') %>:</dt>
+        <dd><%= maybe(carbon.date, t('common.noData')) %></dd>
+        
+        <dt>±1s:</dt>
+        <dd><%= maybe(carbon.s, t('common.noData')) %></dd>
+
+        <dt>BC/AD 68.2%:</dt>
+        <dd><%= maybe(carbon.bcadFirstBot, t('common.noData')) %> — <%= maybe(carbon.bcadFirstTop, t('common.noData')) %></dd>
+        
+        <dt>BC/AD 95.4%:</dt>
+        <dd><%= maybe(carbon.bcadSecondBot, t('common.noData')) %> — <%= maybe(carbon.bcadSecondTop, t('common.noData')) %></dd>
+      
+        <dt>Curve IntCal:</dt>
+        <dd><%= maybe(carbon.curve, t('common.noData')) %></dd>
+
+        <dt><%= t('radiocarbon.depth') %>:</dt>
+        <dd><%= maybe(carbon.depth, t('common.noData')) %></dd>
+
+        <dt><%= t('radiocarbon.relativeDepth') %>:</dt>
+        <dd><%= maybe(carbon.relativeDepth, t('common.noData')) %></dd>
+
+        <dt><%= t('excavation.section') %>:</dt>
+        <dd><%= maybe(carbon.excRegion, t('common.noData')) %></dd>
+
+        <% if (complex[0]) { %>
+          <dt><%= t('excavation.objectName') %>:</dt>
+          <dd><%= maybe(ctl(complex[0].name), t('common.noData')) %></dd>
+        <% } %>
+
+        <dt><%= t('radiocarbon.stratigraphic') %>:</dt>
+        <dd><%= maybe(carbon.layerChar, t('common.noData')) %></dd>
+
+        <% if (genesis[0]) { %>
+          <dt><%= t('radiocarbon.genesis') %>:</dt>
+          <dd><%= maybe(genesis[0].name, t('common.noData')) %></dd>
+        <% } %>
+
+        <% if (facies[0]) { %>
+          <dt><%= t('radiocarbon.facies') %>:</dt>
+          <dd><%= maybe(facies[0].name, t('common.noData')) %></dd>
+        <% } %>
+
+        <% if (material[0]) { %>
+          <dt><%= t('radiocarbon.material') %>:</dt>
+          <dd><%= maybe(material[0].name, t('common.noData')) %></dd>
+        <% } %>
+
+        <% if (excavation[0]) { %>
+          <dt><%= t('excavation.singular') %>:</dt>
+          <dd><%= App.models.Excavation.href(excavation[0].id, ctl(excavation[0].name)) %></dd>
+        <% } %>
+
+        <dt><%= t('radiocarbon.sampleDesc') %>:</dt>
+        <dd><%= maybe(carbon.sampleDesc, t('common.noData')) %></dd>
+      </dl>
+    </div>
+
+    <div id="photos">
+      <% 
+        let html = [];
+
+        if (photosr.length) {
+          _.each(photosr, function(resInfo, i) {
+            html.push(_.map(photosr, function(photo) {
+              return `<img src="${HOST_URL + '/local_storage/' + photo.fileid}" width="100%">`;
+            }))
+          })
+        }
+      %>
+      <%= html.join("<br>") %>
+    </div>
+
+    <div id="researches">
+      <div class="accordion">
+        <% _.each(researches, function(res, i) { %>
+            <%= t("research.singular") %> №<%= i+1 %>:
+            <% let resTitle = ctl(App.views.research.getFullResearchTitle(author[i].name, res.year, resType[i].name)) %></b>
+            <%= App.models.Research.href(res.id, resTitle) %>
+            <br>
+        <% }); %>
+      </div>
+    </div>
+
+    <div id="another">
+    </div>
+  </div>
+
+</div>
+
+<div id="map" class="maps"></div>
