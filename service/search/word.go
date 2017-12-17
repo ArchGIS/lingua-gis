@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	wordCypher = "MATCH (w:Word)" +
+	wordsCypher = "MATCH (w:Word)" +
 		"WHERE w.name =~ {needle}" +
 		"RETURN {id: w.id, name: w.name}"
 )
