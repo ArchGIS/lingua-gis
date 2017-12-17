@@ -22,5 +22,6 @@ var Config = service.Config{
 		{"/collections", collectionsHandler},
 		{"/okns", oknsHandler},
 		{"/count", countHandler},
+		{"/words", wordsHandler},
 	},
 }
