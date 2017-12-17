@@ -43,7 +43,9 @@ App.controllers.word = new (Backbone.View.extend({
 
       var vers = null
       _.each(tmplData.l, function(val, i) {
-        vers = tmplData.v[i] 
+        if (!val.x || !val.y) { return; }
+
+        vers = tmplData.v[i]; 
         tmplData.placemarks.push(
           App.controllers.fn.createStandartPlacemark(
             'local', 
