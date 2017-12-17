@@ -43,7 +43,7 @@
 
         <% _.each(words, function(word, i) {  %>
 
-          <%= App.models.Word.href(word.vId, word.ver) %> - <%= App.models.Word.href(word.wId, word.word) %> 
+          <%= App.models.Version.href(word.vId, word.ver) %> - <%= App.models.Word.href(word.wId, word.word) %> 
           <br>
         <% }); %>
         </div>
