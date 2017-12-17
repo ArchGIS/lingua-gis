@@ -1,0 +1,57 @@
+<div class="content">  
+  <h2>Сведения о населенном пункте "<%= ctl(l.name) %>"</h2>
+  
+  <div id="container">
+    <ul>
+      <li><a href="#versions">Данные</a></li>
+    </ul>
+
+    <div id="versions">
+      <dt>N:</dt>
+      <dd><%= l.x %></dd>
+      
+      <dt>Y:</dt>
+      <dd><%= l.y %></dd>
+
+      <h3>Встречаемые слова:</h3>
+      <dd>
+        <div>
+        <% 
+        var words = [];
+
+        _.each(v, function(ver, i) { 
+          var vName = `${maybe(ver, t('common.noData'), "name")}` 
+
+          if (ver.name2) 
+            vName += " \/ " + ver.name2;
+          if (ver.name3) 
+            vName += " \/ " + ver.name3;
+          if (ver.sense) 
+            vName += " (" + ver.sense + ")";
+
+          words[i] = {
+            wId: w[i].id,
+            vId: v[i].id,
+            ver: vName,
+            word: w[i].name
+          }
+        }); 
+
+        words = _.sortBy(words, function(l){ return l.ver; });
+
+        %>
+
+        <% _.each(words, function(word, i) {  %>
+
+          <%= App.models.Word.href(word.vId, word.ver) %> - <%= App.models.Word.href(word.wId, word.word) %> 
+          <br>
+        <% }); %>
+        </div>
+      </dd>
+    </div>
+
+  </div>
+</div>
+
+<div id="map" class="maps">
+</div>

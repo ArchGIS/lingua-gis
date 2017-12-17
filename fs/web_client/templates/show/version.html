@@ -1,0 +1,33 @@
+<div class="content">  
+  <h2>Сведения о слове "<%= ctl(v.name) %>"</h2>
+  
+  <div id="container">
+    <ul>
+      <li><a href="#version">Информация</a></li>
+      <li><a href="#locals">Населенные пункты</a></li>
+    </ul>
+
+    <div id="version">
+      <dt>Термин:</dt>
+      <dd><%= App.models.Word.href(w[0].id, w[0].name) %></dd>
+
+      <dt>Буквальное значение:</dt>
+      <dd><%= ctl(v.sense) %></dd>
+    </div>
+
+    <div id="locals">
+      <h3>Встречается в:</h3>
+      <% 
+      var uniql = _.sortBy(l, function(loc){ return loc.name; });
+
+      _.each(uniql, function(local, i) { %>
+        <%= App.models.Local.href(local.id, local.name) %>
+        <br>
+      <% }); %>
+    </div>
+
+  </div>
+</div>
+
+<div id="map" class="maps">
+</div>

@@ -1,0 +1,58 @@
+<div class="content">  
+  <h2>Сведения о термине "<%= ctl(w.name) %>"</h2>
+  
+  <div id="container">
+    <ul>
+      <li><a href="#vesrions">Варианты</a></li>
+      <li><a href="#locals">Населенные пункты</a></li>
+    </ul>
+
+    <div id="vesrions">
+      <h3>Варианты термина:</h3>
+      <dd>
+        <div>
+        <% 
+        var uniqv = _.uniq(v, function(item, key, a) { 
+          return item.id;
+        });
+
+        uniqv = _.sortBy(uniqv, function(l){ return l.name; });
+
+        _.each(uniqv, function(ver, i) { 
+          var vName = `${maybe(ver, t('common.noData'), "name")}` 
+
+          if (ver.name2) 
+            vName += " \/ " + ver.name2;
+          if (ver.name3) 
+            vName += " \/ " + ver.name3;
+          if (ver.sense) 
+            vName += " (" + ver.sense + ")";
+          %>
+
+          <%= App.models.Version.href(ver.id, vName) %>
+          <br>
+        <% }); %>
+        </div>
+      </dd>
+    </div>
+
+    <div id="locals">
+      <h3>Встречается в:</h3>
+      <% 
+      var uniql = _.uniq(l, function(item, key, a) { 
+        return item.id;
+      });
+
+      uniql = _.sortBy(uniql, function(l){ return l.name; });
+
+      _.each(uniql, function(local, i) { %>
+        <%= App.models.Local.href(local.id, local.name) %>
+        <br>
+      <% }); %>
+    </div>
+
+  </div>
+</div>
+
+<div id="map" class="maps">
+</div>
