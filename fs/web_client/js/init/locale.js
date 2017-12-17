@@ -34,7 +34,8 @@ App.locale = new function() {
   };
   
   this.getLang = function () {
-    return currentName === '' ? fallbackLang : currentName;
+    return "ru";
+    // return currentName === '' ? fallbackLang : currentName;
   };
 
   this.set = function(name) {
