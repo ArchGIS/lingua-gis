@@ -1,5 +1,5 @@
 LOAD CSV WITH HEADERS FROM "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCddAzW4iG5hsqebQjrJE2DzzWoq3rH6Juh10nUP-n2e0XKjb3tC_EVDe0ZmuHyFWlVqWyWHUXbKZx/pub?gid=1239192588&single=true&output=csv" AS line
-CREATE (:Local {id: toInteger(line.ID), name: line.Name, x: line.X, y: line.Y});
+CREATE (:Local {id: toInteger(line.ID), name: line.Name, x: toFloat(replace(line.X, ",", ".")), y: toFloat(replace(line.Y, ",", "."))});
 
 CREATE (vc:VersionCounter {count: 1})
 CREATE (wc:WordCounter {count: 1})
