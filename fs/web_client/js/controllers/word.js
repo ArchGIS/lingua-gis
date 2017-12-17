@@ -33,12 +33,11 @@ App.controllers.word = new (Backbone.View.extend({
       tmplData.placemarks = [];
 
       var counter = 0;
-      var versions = tmplData.v.reduce((acc, {id}) => {
-        if (!_.has(acc, id)) {
+      var versions = tmplData.v.reduce((acc, val) => {
+        if (!_.has(acc, val.id)) {
           counter += 1;
-          return {...acc, id: counter};
+          acc[val.id] = counter;
         }
-
         return acc;
       }, {});
 
@@ -51,8 +50,8 @@ App.controllers.word = new (Backbone.View.extend({
             vers.id, 
             val.x, 
             val.y, 
-            `${vers.name1}, ${vers.name2}, ${vers.name3} (${val.name})`, 
-            `${versions[tmplData.v[i]['id']]}`
+            `${vers.name1}, ${vers.name2 ? vers.name2: ''}, ${vers.name3 ? vers.name3: ''} (${val.name})`, 
+            `${versions[vers.id]}`
           )
         );
       });
