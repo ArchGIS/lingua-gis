@@ -1,8 +1,8 @@
 package upsert
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/parsing"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/upsert/ast"
+	"github.com/ArchGIS/lingua-gis/service/hquery/parsing"
+	"github.com/ArchGIS/lingua-gis/service/hquery/upsert/ast"
 )
 
 type Data struct {

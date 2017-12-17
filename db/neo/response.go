@@ -3,8 +3,8 @@ package neo
 import (
 	"encoding/json"
 
-	"github.com/ArchGIS/ArchGoGIS/db/neo/errs"
-	"github.com/ArchGIS/ArchGoGIS/echo"
+	"github.com/ArchGIS/lingua-gis/db/neo/errs"
+	"github.com/ArchGIS/lingua-gis/echo"
 )
 
 func newResponse(input []byte) (*Response, error) {

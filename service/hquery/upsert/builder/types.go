@@ -1,8 +1,8 @@
 package builder
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/ext"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/placeholder"
+	"github.com/ArchGIS/lingua-gis/ext"
+	"github.com/ArchGIS/lingua-gis/service/hquery/placeholder"
 )
 
 type StatementBuilder struct {

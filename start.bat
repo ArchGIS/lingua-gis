@@ -1,2 +1,2 @@
 go install
-ArchGoGIS.exe
+lingua-gis.exe

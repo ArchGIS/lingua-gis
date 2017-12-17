@@ -1,14 +1,14 @@
 package read2
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/assert"
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
+	"github.com/ArchGIS/lingua-gis/assert"
+	"github.com/ArchGIS/lingua-gis/db/neo"
 	"encoding/json"
-	"github.com/ArchGIS/ArchGoGIS/ext"
-	"github.com/ArchGIS/ArchGoGIS/ext/xjson"
-	"github.com/ArchGIS/ArchGoGIS/ext/xslice"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read2/parser"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/ext"
+	"github.com/ArchGIS/lingua-gis/ext/xjson"
+	"github.com/ArchGIS/lingua-gis/ext/xslice"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read2/parser"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 func mustDestructureResp(resp *neo.Response) ([]string, []json.RawMessage) {

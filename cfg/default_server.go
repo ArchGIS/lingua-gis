@@ -1,7 +1,7 @@
 package cfg
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/web/server"
+	"github.com/ArchGIS/lingua-gis/web/server"
 )
 
 func DevServer() server.Config {

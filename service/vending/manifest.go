@@ -1,7 +1,7 @@
 package vending
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service"
+	"github.com/ArchGIS/lingua-gis/service"
 )
 
 var Config = service.Config{

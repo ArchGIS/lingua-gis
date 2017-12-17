@@ -1,7 +1,7 @@
 package neo
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/echo"
+	"github.com/ArchGIS/lingua-gis/echo"
 )
 
 func NewQuery(stmt ...Statement) Query {

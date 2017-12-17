@@ -1,8 +1,8 @@
 package seq
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/db/pg"
-	"github.com/ArchGIS/ArchGoGIS/db/pg/errs"
+	"github.com/ArchGIS/lingua-gis/db/pg"
+	"github.com/ArchGIS/lingua-gis/db/pg/errs"
 	"errors"
 	"fmt"
 )

@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/web"
+	"github.com/ArchGIS/lingua-gis/web"
 )
 
 type Config struct {

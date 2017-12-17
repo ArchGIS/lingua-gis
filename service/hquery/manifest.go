@@ -2,12 +2,12 @@
 package hquery
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read2"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/upsert"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/delete"
-	"github.com/ArchGIS/ArchGoGIS/web"
+	"github.com/ArchGIS/lingua-gis/service"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read2"
+	"github.com/ArchGIS/lingua-gis/service/hquery/upsert"
+	"github.com/ArchGIS/lingua-gis/service/hquery/delete"
+	"github.com/ArchGIS/lingua-gis/web"
 )
 
 var Config = service.Config{

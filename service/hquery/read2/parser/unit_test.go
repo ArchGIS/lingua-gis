@@ -1,7 +1,7 @@
 package parser
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/assert"
+	"github.com/ArchGIS/lingua-gis/assert"
 	"encoding/json"
 	"strings"
 	"testing"

@@ -1,7 +1,7 @@
 package req
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/assert"
+	"github.com/ArchGIS/lingua-gis/assert"
 	"io/ioutil"
 	"net/http"
 	"testing"

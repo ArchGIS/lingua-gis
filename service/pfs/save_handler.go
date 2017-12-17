@@ -4,9 +4,9 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/ArchGIS/ArchGoGIS/echo"
-	"github.com/ArchGIS/ArchGoGIS/service/pfs/errs"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
+	"github.com/ArchGIS/lingua-gis/echo"
+	"github.com/ArchGIS/lingua-gis/service/pfs/errs"
+	"github.com/ArchGIS/lingua-gis/web/api"
 )
 
 const (

@@ -1,9 +1,9 @@
 package pfs
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/service/pfs/local"
-	"github.com/ArchGIS/ArchGoGIS/storage"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/service/pfs/local"
+	"github.com/ArchGIS/lingua-gis/storage"
 )
 
 var agent storage.FileStorage

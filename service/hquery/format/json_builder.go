@@ -2,8 +2,8 @@ package format
 
 import (
 	"bytes"
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
-	"github.com/ArchGIS/ArchGoGIS/echo"
+	"github.com/ArchGIS/lingua-gis/db/neo"
+	"github.com/ArchGIS/lingua-gis/echo"
 )
 
 type JsonFormatter struct {

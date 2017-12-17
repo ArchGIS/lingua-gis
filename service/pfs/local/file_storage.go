@@ -3,8 +3,8 @@ package local
 import (
 	"io/ioutil"
 
-	"github.com/ArchGIS/ArchGoGIS/db/pg/seq"
-	"github.com/ArchGIS/ArchGoGIS/cfg"
+	"github.com/ArchGIS/lingua-gis/db/pg/seq"
+	"github.com/ArchGIS/lingua-gis/cfg"
 )
 
 func NewFileStorage(dstDir string) LocalStorage {

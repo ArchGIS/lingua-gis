@@ -1,13 +1,13 @@
 package server
 
 // import (
-	// "github.com/ArchGIS/ArchGoGIS/assert"
-	// "github.com/ArchGIS/ArchGoGIS/echo"
-	// "github.com/ArchGIS/ArchGoGIS/ext/xfile"
+	// "github.com/ArchGIS/lingua-gis/assert"
+	// "github.com/ArchGIS/lingua-gis/echo"
+	// "github.com/ArchGIS/lingua-gis/ext/xfile"
 	// "net/http"
-	// "github.com/ArchGIS/ArchGoGIS/service"
-	// "github.com/ArchGIS/ArchGoGIS/web"
-	// "github.com/ArchGIS/ArchGoGIS/cfg"
+	// "github.com/ArchGIS/lingua-gis/service"
+	// "github.com/ArchGIS/lingua-gis/web"
+	// "github.com/ArchGIS/lingua-gis/cfg"
 // )
 
 // var config *Config

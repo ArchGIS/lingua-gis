@@ -1,7 +1,7 @@
 package read2
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
+	"github.com/ArchGIS/lingua-gis/db/neo"
 	"testing"
 )
 

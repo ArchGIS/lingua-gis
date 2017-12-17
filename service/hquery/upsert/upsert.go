@@ -7,16 +7,16 @@ import (
 	"mime"
 	"net/http"
 
-	"github.com/ArchGIS/ArchGoGIS/assert"
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
-	"github.com/ArchGIS/ArchGoGIS/db/pg/seq"
-	"github.com/ArchGIS/ArchGoGIS/echo"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/parsing"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/upsert/builder"
-	"github.com/ArchGIS/ArchGoGIS/throw"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
+	"github.com/ArchGIS/lingua-gis/assert"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/db/neo"
+	"github.com/ArchGIS/lingua-gis/db/pg/seq"
+	"github.com/ArchGIS/lingua-gis/echo"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/parsing"
+	"github.com/ArchGIS/lingua-gis/service/hquery/upsert/builder"
+	"github.com/ArchGIS/lingua-gis/throw"
+	"github.com/ArchGIS/lingua-gis/web/api"
 )
 
 var Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

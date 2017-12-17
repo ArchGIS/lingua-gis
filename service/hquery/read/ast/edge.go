@@ -2,7 +2,7 @@ package ast
 
 import (
 	// "service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/parsing"
+	"github.com/ArchGIS/lingua-gis/service/hquery/parsing"
 	// "throw"
 )
 

@@ -1,7 +1,7 @@
 package ast
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/parsing"
+	"github.com/ArchGIS/lingua-gis/service/hquery/parsing"
 )
 
 func MustNewNode(tag string, query map[string]string) *Node {

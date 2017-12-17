@@ -11,7 +11,7 @@ import (
 
 	"fmt"
 
-	"github.com/ArchGIS/ArchGoGIS/db/pg"
+	"github.com/ArchGIS/lingua-gis/db/pg"
 )
 
 const (

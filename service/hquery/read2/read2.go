@@ -1,13 +1,13 @@
 package read2
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
+	"github.com/ArchGIS/lingua-gis/db/neo"
 	"encoding/json"
 	"fmt"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
 	"net/http"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read2/parser"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read2/parser"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 // #FIXME

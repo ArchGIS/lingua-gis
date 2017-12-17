@@ -1,8 +1,8 @@
 package neo
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/assert"
-	"github.com/ArchGIS/ArchGoGIS/dbg"
+	"github.com/ArchGIS/lingua-gis/assert"
+	"github.com/ArchGIS/lingua-gis/dbg"
 	"testing"
 )
 
