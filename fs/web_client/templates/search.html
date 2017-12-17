@@ -4,110 +4,47 @@
   <label>
     <%= t('search.subject') %>
     <%= widget('Toggler', {"select": [
-      [t("monument.singular"), "#monument-params"],
-      [t("research.singular"), "#research-params"],
-      [t("author.singular"), "#author-params"],
-      [t("report.singular"), "#report-params"],
-      [t("heritage.singular"), "#okn-params"],
-      [t("excavation.singular"), "#excavation-params"],
-      [t("radiocarbon.singular"), "#radiocarbon-params"],
+      ["Термин", "#word-params"],
+      ["Населенный пункт", "#local-params"],
+      ["Удмуртский диалектный вариант", "#udm-params"],
+      ["Буквальное значение", "#sense-params"],
     ]}, "objectToggler", "class='form-control'")%>
   </label>
   <h4><%= t("search.criteria") %>:</h4>
 
-  <div class="flex-column" id="monument-params" style="display: none">
+  <div class="flex-column" id="word-params" style="display: none">
     <div class="form-group">
-      <label for="monument-input" class="flex-row">
-        <%= t("knowledge.prop.name") %>
+      <label for="word-input" class="flex-row">
+        Название
       </label>
-      <input class="form-control" type="text" id="monument-input"/>
-    </div>
-    <div class="form-group">
-      <label for="monument-epoch" class="flex-row">
-        <%= t("monument.prop.epoch") %>
-      </label>
-      <select class="form-control" id="monument-epoch"/>
-    </div>
-    <div class="form-group">
-      <label for="monument-type" class="flex-row">
-        <%= t("monument.prop.type") %>
-      </label>
-      <select class="form-control" id="monument-type"/>
+      <input class="form-control" type="text" id="word-input"/>
     </div>
   </div>
 
-  <div class="flex-column" id="research-params" style="display: none">
+  <div class="flex-column" id="local-params" style="display: none">
     <div class="form-group">
-      <label for="research-author-input" class="flex-row">
-        <%= t("author.name") %>
+      <label for="local-input" class="flex-row">
+        Название
       </label>
-      <input class="form-control" type="text" id="research-author-input"/>
-    </div>
-    <br/>
-    <div class="form-group">
-      <label for="research-year-input" class="flex-row">
-        <%= t("research.year") %>
-      </label>
-      <input class="form-control" type="number" id="research-year-input"/>
+      <input class="form-control" type="text" id="local-input"/>
     </div>
   </div>
 
-  <div class="flex-column" id="author-params" style="display: none">
+  <div class="flex-column" id="udm-params" style="display: none">
     <div class="form-group">
-      <label for="author-input" class="flex-row">
-        <%= t("author.prop.name") %>
+      <label for="udm-input" class="flex-row">
+        Название
       </label>
-      <input class="form-control" type="text" id="author-input"/>
+      <input class="form-control" type="text" id="udm-input"/>
     </div>
   </div>
 
-  <div class="flex-column" id="report-params" style="display: none">
+  <div class="flex-column" id="sense-params" style="display: none">
     <div class="form-group">
-      <label for="report-author-input" class="flex-row">
-        <%= t("author.name") %>
+      <label for="sense-input" class="flex-row">
+        Название
       </label>
-      <input class="form-control" type="text" id="report-author-input"/>
-    </div>
-    <br/>
-    <div class="form-group">
-      <label for="report-year-input" class="flex-row">
-        <%= t("report.year") %>
-      </label>
-      <input class="form-control" type="number" id="report-year-input">
-    </div>
-  </div>
-
-  <div class="flex-column" id="okn-params" style="display: none">
-    <div class="form-group">
-      <label for="heritage-input" class="flex-row">
-        <%= t("heritage.name") %>
-      </label>
-      <input class="form-control" type="text" id="heritage-input"/>
-    </div>
-  </div>
-
-  <div class="flex-column" id="excavation-params" style="display: none">
-    <div class="form-group">
-      <label for="exc-author-input" class="flex-row">
-        <%= t("research.author") %>
-      </label>
-      <input class="form-control" type="text" id="exc-author-input"/>
-    </div>
-    <br/>
-    <div class="form-group">
-      <label for="exc-year-input" class="flex-row">
-        <%= t("research.year") %>
-      </label>
-      <input class="form-control" type="number" id="exc-year-input">
-    </div>
-  </div>
-
-  <div class="flex-column" id="radiocarbon-params" style="display: none">
-    <div class="form-group">
-      <label for="radiocarbon-index-input" class="flex-row">
-        <%= t("radiocarbon.index") %>
-      </label>
-      <input class="form-control" type="text" id="radiocarbon-index-input"/>
+      <input class="form-control" type="text" id="sense-input"/>
     </div>
   </div>
 
