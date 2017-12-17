@@ -51,7 +51,7 @@
       '*actions': function(dispathInfo) {
         try {
           if (!dispathInfo) {
-            App.controllers.main.index();
+            App.controllers.search.index();
             return;
           }
           
