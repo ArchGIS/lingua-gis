@@ -24,5 +24,6 @@ var Config = service.Config{
 		{"/count", countHandler},
 		{"/words", wordsHandler},
 		{"/locals", localsHandler},
+		{"/versions", versionPhoneticHandler},
 	},
 }
