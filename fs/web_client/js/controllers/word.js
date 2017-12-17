@@ -32,9 +32,19 @@ App.controllers.word = new (Backbone.View.extend({
 
       tmplData.placemarks = [];
 
+      var counter = 0;
+      var versions = tmplData.v.reduce((acc, {id}) => {
+        if (!_.has(acc, id)) {
+          counter += 1;
+          return {...acc, id: counter};
+        }
+
+        return acc;
+      }, {});
+
       _.each(tmplData.l, function(val, i) {
         tmplData.placemarks.push(
-          App.controllers.fn.createStandartPlacemark('word-version', tmplData.v[i].id, val.x, val.y, tmplData.v[i].sense, `${i}`)
+          App.controllers.fn.createStandartPlacemark('word-version', tmplData.v[i].id, val.x, val.y, val.name, `${versions[tmplData.v[i]['id']]}`)
         );
       });
 
