@@ -32,8 +32,11 @@ App.controllers.word = new (Backbone.View.extend({
 
       tmplData.placemarks = [];
 
-      // let resPlacemarks = App.controllers.fn.getResPlacemarks(tmplData);
-      // tmplData.placemarks = _.union(tmplData.placemarks, resPlacemarks);
+      _.each(tmplData.l, function(val, i) {
+        tmplData.placemarks.push(
+          App.controllers.fn.createStandartPlacemark('word-version', tmplData.v[i].id, val.x, val.y, tmplData.v[i].sense, `${i}`)
+        );
+      });
 
       App.page.render("show/word", tmplData, tmplData.placemarks)
     };
