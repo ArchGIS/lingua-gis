@@ -6,8 +6,8 @@ import (
 
 func DevServer() server.Config {
 	return server.Config{
-		Port: "8080",
+		Port: "5000",
 		Dns:  "localhost",
-		Host: "localhost:8080",
+		Host: "localhost:5000",
 	}
 }
