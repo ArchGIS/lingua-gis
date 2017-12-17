@@ -23,5 +23,6 @@ App.store.pathToIcons = {
   heritage: 'heritage',
   radiocarbon: 'radiocarbon',
   research: 'resTypes',
-  artifact: 'artifacts'
+  artifact: 'artifacts',
+  'word-version': 'wordVersions'
 }
