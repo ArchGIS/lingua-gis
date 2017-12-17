@@ -1,3 +1,3 @@
 #!/bin/bash
 rm -f $NEO4J_HOME/import/*
-cp $GOPATH/src/github.com/ArchGIS/ArchGoGIS/misc/extern_data/origin_csv/* $NEO4J_HOME/import
+cp $GOPATH/src/github.com/ArchGIS/lingua-gis/misc/extern_data/origin_csv/* $NEO4J_HOME/import

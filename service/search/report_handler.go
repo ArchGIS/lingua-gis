@@ -6,14 +6,14 @@ import (
 	"unsafe"
 	"net/http"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
-	"github.com/ArchGIS/ArchGoGIS/echo"
-	"github.com/ArchGIS/ArchGoGIS/ext"
-	"github.com/ArchGIS/ArchGoGIS/service/search/errs"
-	"github.com/ArchGIS/ArchGoGIS/web"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
-	// "github.com/ArchGIS/ArchGoGIS/norm"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/db/neo"
+	"github.com/ArchGIS/lingua-gis/echo"
+	"github.com/ArchGIS/lingua-gis/ext"
+	"github.com/ArchGIS/lingua-gis/service/search/errs"
+	"github.com/ArchGIS/lingua-gis/web"
+	"github.com/ArchGIS/lingua-gis/web/api"
+	// "github.com/ArchGIS/lingua-gis/norm"
 )
 
 const (

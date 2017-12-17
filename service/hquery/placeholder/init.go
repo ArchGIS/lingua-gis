@@ -3,7 +3,7 @@ package placeholder
 import (
 	"fmt"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
+	"github.com/ArchGIS/lingua-gis/cfg"
 )
 
 var placeholders []string

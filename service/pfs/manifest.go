@@ -2,8 +2,8 @@
 package pfs
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service"
-	"github.com/ArchGIS/ArchGoGIS/web"
+	"github.com/ArchGIS/lingua-gis/service"
+	"github.com/ArchGIS/lingua-gis/web"
 )
 
 // Config is map URL to handlers 

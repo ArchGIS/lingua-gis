@@ -5,11 +5,11 @@ import (
 	"io"
 	"strings"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/echo"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/valid"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/echo"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/valid"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 func MustDestructureNodeTag(tag string) (string, string) {

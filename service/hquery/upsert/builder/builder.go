@@ -3,7 +3,7 @@ package builder
 import (
 	"bytes"
 
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/upsert/ast"
+	"github.com/ArchGIS/lingua-gis/service/hquery/upsert/ast"
 )
 
 func UpdateEdge(edge *ast.Edge) string {

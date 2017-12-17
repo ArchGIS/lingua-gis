@@ -1,8 +1,8 @@
 package pg
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/assert"
-	"github.com/ArchGIS/ArchGoGIS/cfg"
+	"github.com/ArchGIS/lingua-gis/assert"
+	"github.com/ArchGIS/lingua-gis/cfg"
 	"database/sql"
 	"fmt"
 

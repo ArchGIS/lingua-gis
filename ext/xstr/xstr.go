@@ -1,7 +1,7 @@
 package xstr
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/ext"
+	"github.com/ArchGIS/lingua-gis/ext"
 )
 
 // Вот здесь хотелось бы иметь генерики или шаблоны...

@@ -1,7 +1,7 @@
 package seq
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/cfg"
+	"github.com/ArchGIS/lingua-gis/cfg"
 )
 
 var idSequences map[string]string

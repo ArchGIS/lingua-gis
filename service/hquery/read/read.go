@@ -4,14 +4,14 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
-	"github.com/ArchGIS/ArchGoGIS/ext/xstr"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/format"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/shared"
-	"github.com/ArchGIS/ArchGoGIS/throw"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/db/neo"
+	"github.com/ArchGIS/lingua-gis/ext/xstr"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/format"
+	"github.com/ArchGIS/lingua-gis/service/hquery/shared"
+	"github.com/ArchGIS/lingua-gis/throw"
+	"github.com/ArchGIS/lingua-gis/web/api"
 )
 
 var Handler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {

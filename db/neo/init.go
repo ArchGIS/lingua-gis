@@ -3,8 +3,8 @@ package neo
 import (
 	"encoding/base64"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/web/req"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/web/req"
 )
 
 var agent *req.Agent

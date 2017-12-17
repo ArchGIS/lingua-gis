@@ -1,7 +1,7 @@
 package web
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/echo"
+	"github.com/ArchGIS/lingua-gis/echo"
 	"net/http"
 )
 

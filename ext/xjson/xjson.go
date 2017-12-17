@@ -2,7 +2,7 @@ package xjson
 
 import (
 	"encoding/json"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 type Object map[string]interface{}

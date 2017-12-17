@@ -7,7 +7,7 @@
 package req
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/echo"
+	"github.com/ArchGIS/lingua-gis/echo"
 	"io"
 	"io/ioutil"
 	"net/http"

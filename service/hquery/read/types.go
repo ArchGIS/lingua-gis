@@ -1,10 +1,10 @@
 package read
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/ext"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/parsing"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/placeholder"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read/ast"
+	"github.com/ArchGIS/lingua-gis/ext"
+	"github.com/ArchGIS/lingua-gis/service/hquery/parsing"
+	"github.com/ArchGIS/lingua-gis/service/hquery/placeholder"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read/ast"
 )
 
 type Data struct {

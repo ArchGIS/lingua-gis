@@ -1,12 +1,12 @@
 package shared
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/cfg"
+	"github.com/ArchGIS/lingua-gis/cfg"
 	"io"
 	"net/http"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/throw"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/throw"
+	"github.com/ArchGIS/lingua-gis/web/api"
 )
 
 func Handle(w http.ResponseWriter, r *http.Request, responder func(io.ReadCloser) []byte) {

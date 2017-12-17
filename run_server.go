@@ -8,12 +8,12 @@ import (
 	"github.com/labstack/echo/middleware"
 	"github.com/labstack/gommon/log"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/service"
-	"github.com/ArchGIS/ArchGoGIS/service/calibrate"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery"
-	"github.com/ArchGIS/ArchGoGIS/service/pfs"
-	"github.com/ArchGIS/ArchGoGIS/service/search"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/service"
+	"github.com/ArchGIS/lingua-gis/service/calibrate"
+	"github.com/ArchGIS/lingua-gis/service/hquery"
+	"github.com/ArchGIS/lingua-gis/service/pfs"
+	"github.com/ArchGIS/lingua-gis/service/search"
 )
 
 func main() {

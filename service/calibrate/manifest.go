@@ -8,10 +8,10 @@ import (
 	"os/exec"
 	"regexp"
 
-	"github.com/ArchGIS/ArchGoGIS/ext"
-	"github.com/ArchGIS/ArchGoGIS/service"
-	"github.com/ArchGIS/ArchGoGIS/web"
-	"github.com/ArchGIS/ArchGoGIS/web/api"
+	"github.com/ArchGIS/lingua-gis/ext"
+	"github.com/ArchGIS/lingua-gis/service"
+	"github.com/ArchGIS/lingua-gis/web"
+	"github.com/ArchGIS/lingua-gis/web/api"
 )
 
 var Config = service.Config{

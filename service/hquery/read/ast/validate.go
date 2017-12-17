@@ -1,9 +1,9 @@
 package ast
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/valid"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/valid"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 func mustValidateSelector(selector string) {

@@ -1,13 +1,13 @@
 package cfg
 
 import (
-	"github.com/ArchGIS/ArchGoGIS/web/server"
+	"github.com/ArchGIS/lingua-gis/web/server"
 )
 
 func DevServer() server.Config {
 	return server.Config{
-		Port: "8080",
+		Port: "5000",
 		Dns:  "localhost",
-		Host: "localhost:8080",
+		Host: "localhost:5000",
 	}
 }

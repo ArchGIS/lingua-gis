@@ -3,10 +3,10 @@ package upsert
 import (
 	"strings"
 
-	"github.com/ArchGIS/ArchGoGIS/cfg"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/errs"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/upsert/ast"
-	"github.com/ArchGIS/ArchGoGIS/throw"
+	"github.com/ArchGIS/lingua-gis/cfg"
+	"github.com/ArchGIS/lingua-gis/service/hquery/errs"
+	"github.com/ArchGIS/lingua-gis/service/hquery/upsert/ast"
+	"github.com/ArchGIS/lingua-gis/throw"
 )
 
 func MustNewParser(input map[string]map[string]string) *Parser {

@@ -3,8 +3,8 @@ package read
 import (
 	"strings"
 
-	"github.com/ArchGIS/ArchGoGIS/db/neo"
-	"github.com/ArchGIS/ArchGoGIS/service/hquery/read/ast"
+	"github.com/ArchGIS/lingua-gis/db/neo"
+	"github.com/ArchGIS/lingua-gis/service/hquery/read/ast"
 )
 
 func stringInSlice(a string, list []string) bool {
