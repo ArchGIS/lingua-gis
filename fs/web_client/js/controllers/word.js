@@ -46,7 +46,7 @@ App.controllers.word = new (Backbone.View.extend({
         vers = tmplData.v[i] 
         tmplData.placemarks.push(
           App.controllers.fn.createStandartPlacemark(
-            'word-version', 
+            'local', 
             vers.id, 
             val.x, 
             val.y, 
