@@ -42,9 +42,18 @@ App.controllers.word = new (Backbone.View.extend({
         return acc;
       }, {});
 
+      var vers = null
       _.each(tmplData.l, function(val, i) {
+        vers = tmplData.v[i] 
         tmplData.placemarks.push(
-          App.controllers.fn.createStandartPlacemark('word-version', tmplData.v[i].id, val.x, val.y, val.name, `${versions[tmplData.v[i]['id']]}`)
+          App.controllers.fn.createStandartPlacemark(
+            'word-version', 
+            vers.id, 
+            val.x, 
+            val.y, 
+            `${vers.name1}, ${vers.name2}, ${vers.name3} (${val.name})`, 
+            `${versions[tmplData.v[i]['id']]}`
+          )
         );
       });
 
