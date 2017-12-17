@@ -17,7 +17,7 @@ import (
 const (
 	versionPhoneticCypher = "MATCH (w:Version) " +
 		"%s " +
-		"RETURN {id: w.id, name: w.name}"
+		"RETURN {id: w.id, name1: w.name1, name2: w.name2, name3: w.name3, sense: w.sense}"
 )
 
 var versionPhoneticHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
