@@ -1,12 +1,14 @@
 LOAD CSV WITH HEADERS FROM "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCddAzW4iG5hsqebQjrJE2DzzWoq3rH6Juh10nUP-n2e0XKjb3tC_EVDe0ZmuHyFWlVqWyWHUXbKZx/pub?gid=1239192588&single=true&output=csv" AS line
 CREATE (:Local {id: toInteger(line.ID), name: line.Name, x: line.X, y: line.Y});
 
-CREATE (c:Counter {count: 1})
-WITH c
+CREATE (vc:VersionCounter {count: 1})
+CREATE (wc:WordCounter {count: 1})
+WITH vc, wc
 LOAD CSV WITH HEADERS FROM "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCddAzW4iG5hsqebQjrJE2DzzWoq3rH6Juh10nUP-n2e0XKjb3tC_EVDe0ZmuHyFWlVqWyWHUXbKZx/pub?gid=1907372917&single=true&output=csv" AS line
 MERGE (w:Word {name: line.`Термин`})
-CREATE (v:Version {id: c.count, name1: line.Name1, sense: line.Sense})
-SET c.count = c.count + 1
+  ON CREATE SET w.id = wc.count, wc.count = wc.count + 1
+CREATE (v:Version {id: vc.count, name1: line.Name1, sense: line.Sense})
+SET vc.count = vc.count + 1
 FOREACH (ignoreMe IN CASE WHEN line.Name2 IS NOT NULL THEN [1] ELSE [] END | SET v.name2 = line.Name2)
 FOREACH (ignoreMe IN CASE WHEN line.Name3 IS NOT NULL THEN [1] ELSE [] END | SET v.name3 = line.Name3)
 MERGE (w)-[:has]->(v)
@@ -17,4 +19,4 @@ FOREACH (x in list |
   MERGE (v)-[:has]->(l)
 );
 
-MATCH (c:Counter) DELETE c;
+MATCH (vc:VersionCounter), (wc:WordCounter) DELETE vc, wc;
