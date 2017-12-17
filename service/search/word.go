@@ -2,11 +2,10 @@ package search
 
 import (
 	"bytes"
+	"fmt"
 	"net/http"
-	"unicode/utf8"
 	"unsafe"
 
-	"github.com/ArchGIS/lingua-gis/cfg"
 	"github.com/ArchGIS/lingua-gis/db/neo"
 	"github.com/ArchGIS/lingua-gis/echo"
 	"github.com/ArchGIS/lingua-gis/ext"
@@ -15,8 +14,8 @@ import (
 )
 
 const (
-	wordsCypher = "MATCH (w:Word)" +
-		"WHERE w.name =~ {needle}" +
+	wordsCypher = "MATCH (w:Word) " +
+		"%s " +
 		"RETURN {id: w.id, name: w.name}"
 )
 
@@ -31,18 +30,14 @@ var wordsHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request)
 })
 
 func searchForWords(needle string) ([]byte, error) {
+	var query string
 	if needle == "" {
-		return nil, errs.FilterIsEmpty
+		query = fmt.Sprintf(wordsCypher, "")
+	} else {
+		query = fmt.Sprintf(wordsCypher, "WHERE w.name =~ {needle}")
 	}
 
-	runes := utf8.RuneCountInString(needle)
-	if runes < cfg.SearchMinPrefixLen {
-		return nil, errs.PrefixIsTooShort
-	} else if runes > cfg.SearchMaxPrefixLen {
-		return nil, errs.PrefixIsTooLong
-	}
-
-	resp, err := neo.Run(wordsCypher, neo.Params{"needle": `"(?ui)^.*` + needle + `.*$"`})
+	resp, err := neo.Run(query, neo.Params{"needle": `"(?ui)^.*` + needle + `.*$"`})
 	if err != nil {
 		echo.ServerError.Print(err)
 		return nil, errs.RetrieveError
