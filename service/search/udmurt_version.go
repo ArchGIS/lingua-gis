@@ -34,7 +34,7 @@ var versionPhoneticHandler = http.HandlerFunc(func(w http.ResponseWriter, r *htt
 })
 
 func searchForVersionPhonetic(mode, filter string) ([]byte, error) {
-	if name == "" {
+	if filter == "" {
 		return nil, errors.New("Empty parameters not allowed")
 	}
 
