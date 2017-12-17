@@ -30,28 +30,25 @@ App.controllers.local = new (Backbone.View.extend({
       })
       console.log(tmplData);
 
-      tmplData.placemarks = [];
+      tmplData.placemarks = [{
+        type: "research",
+        id: lId,
+        coords: [tmplData.l.x, tmplData.l.y],
+        pref: {
+          hintContent: tmplData.l.name
+        },
+        opts: {
+          preset: "resType5"
+        }
+      }];
 
-      // let resPlacemarks = App.controllers.fn.getResPlacemarks(tmplData);
-      // tmplData.placemarks = _.union(tmplData.placemarks, resPlacemarks);
+      console.log(tmplData.placemarks)
 
       App.page.render("show/local", tmplData, tmplData.placemarks)
     };
 
     var queryCounter = _.reduce(queries, (memo, obj) => { return memo + _.size(obj) }, 0);
-
     var callRender = _.after(queryCounter, render);
-
-    // _.each(queries.complex, function(query, key) {
-    //   $.when(model.sendQuery(query)).then(function(response) {
-    //     _.extend(tmplData, response);
-
-    //     var ids = _.map(tmplData[key], function(obj) {return obj.id.toString()});
-
-    //     data.push(model.getData(queries[key], callRender, true, ids));
-    //     callRender();
-    //   })
-    // })
 
     data.push(model.getData(queries.single, callRender));
   },

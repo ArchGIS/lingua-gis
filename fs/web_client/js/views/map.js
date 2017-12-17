@@ -217,6 +217,10 @@ App.views.createOverlays = (leaf, types) => {
             '4': {
               name: 'Раскопки',
               en_name: 'Excavation'
+            },
+            '5': {
+              name: 'ling',
+              en_name: 'ling'
             }
           }
           const data = d3.nest()

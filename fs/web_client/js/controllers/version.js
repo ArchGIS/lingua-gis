@@ -36,26 +36,25 @@ App.controllers.version = new (Backbone.View.extend({
 
       tmplData.placemarks = [];
 
-      // let resPlacemarks = App.controllers.fn.getResPlacemarks(tmplData);
-      // tmplData.placemarks = _.union(tmplData.placemarks, resPlacemarks);
+      _.each(tmplData.l, function(local, i) {
+        tmplData.placemarks[i] = {
+          type: "research",
+          id: `${local.id}`,
+          coords: [local.x, local.y],
+          pref: {
+            hintContent: local.name
+          },
+          opts: {
+            preset: "resType5"
+          }
+        };
+      })
 
       App.page.render("show/version", tmplData, tmplData.placemarks)
     };
 
     var queryCounter = _.reduce(queries, (memo, obj) => { return memo + _.size(obj) }, 0);
-
     var callRender = _.after(queryCounter, render);
-
-    // _.each(queries.complex, function(query, key) {
-    //   $.when(model.sendQuery(query)).then(function(response) {
-    //     _.extend(tmplData, response);
-
-    //     var ids = _.map(tmplData[key], function(obj) {return obj.id.toString()});
-
-    //     data.push(model.getData(queries[key], callRender, true, ids));
-    //     callRender();
-    //   })
-    // })
 
     data.push(model.getData(queries.single, callRender));
   },
