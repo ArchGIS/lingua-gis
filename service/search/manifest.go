@@ -23,5 +23,6 @@ var Config = service.Config{
 		{"/okns", oknsHandler},
 		{"/count", countHandler},
 		{"/words", wordsHandler},
+		{"/locals", localsHandler},
 	},
 }
