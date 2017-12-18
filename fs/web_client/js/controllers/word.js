@@ -58,7 +58,7 @@ App.controllers.word = new (Backbone.View.extend({
         );
       });
 
-      App.page.render("show/word", tmplData, tmplData.placemarks)
+      App.page.render("show/word", {...tmplData, versTypes: versions}, tmplData.placemarks)
     };
 
     var queryCounter = _.reduce(queries, (memo, obj) => { return memo + _.size(obj) }, 0);

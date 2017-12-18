@@ -29,6 +29,7 @@
             vName += " (" + ver.sense + ")";
           %>
 
+          <img src="/web_client/img/local/<%= versTypes[ver.id] %>.png">
           <%= App.models.Version.href(ver.id, vName) %>
           <br>
         <% }); %>
