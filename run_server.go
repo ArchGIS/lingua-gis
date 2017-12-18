@@ -44,7 +44,7 @@ func main() {
 	e.Static("/web_client", "fs/web_client")
 	e.Static("/locales", "fs/locales")
 
-	e.File("/", "fs/web_client/login.html")
+	e.File("/main", "fs/web_client/login.html")
 	e.File("/index", "fs/web_client/app.html")
 
 	e.POST("/login", loginHandler)
