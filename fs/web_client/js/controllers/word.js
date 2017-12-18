@@ -52,7 +52,7 @@ App.controllers.word = new (Backbone.View.extend({
             vers.id, 
             val.x, 
             val.y, 
-            `${vers.name1}, ${vers.name2 ? vers.name2: ''}, ${vers.name3 ? vers.name3: ''} (${val.name})`, 
+            `${vers.name1}${vers.name2 ? ' / ' + vers.name2 : ''}${vers.name3 ? ' / ' + vers.name3 : ''} (${val.name})`, 
             `${versions[vers.id]}`
           )
         );
