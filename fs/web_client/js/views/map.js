@@ -120,7 +120,7 @@ App.views.createOverlays = (leaf, types) => {
   const rmax = 30;
 
   const cluster = L.markerClusterGroup({
-    maxClusterRadius: 10,
+    maxClusterRadius: 0,
     iconCreateFunction: (cluster) => {
       const markers = cluster.getAllChildMarkers(),
             n = markers.length,
