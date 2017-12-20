@@ -1,7 +1,7 @@
 'use strict';
 
 App.views.map = () => {
-  let map = L.map('map').setView([55.78, 49.13], 6);
+  let map = L.map('map').setView([56.8619, 53.2324], 6);
 
   let layerdefs = {
     mapnik: {
