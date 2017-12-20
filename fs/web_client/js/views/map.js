@@ -342,6 +342,10 @@ App.views.addToMap = (placemarks, existMap) => {
       marker = L.marker(L.latLng(item.coords[0], item.coords[1]), {
         icon: icon
       });
+
+      marker.on('click', function(e) {
+        window.open(`${HOST_URL}/index#${item.type}/show/${item.id}`, '_blank');
+      });
     }
 
     marker.bindTooltip(ctl(item.pref.hintContent), {
@@ -353,9 +357,6 @@ App.views.addToMap = (placemarks, existMap) => {
     });
     marker.on('mouseout', function(e) {
       this.closeTooltip();
-    });
-    marker.on('click', function(e) {
-      window.open(`${HOST_URL}/index#${item.type}/show/${item.id}`, '_blank');
     });
 
     // Need for clusters
