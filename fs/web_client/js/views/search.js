@@ -86,6 +86,27 @@ App.views.search = new (Backbone.View.extend({
     });
     object = objects['word-params'];
 
+    var query = {
+      areas: JSON.stringify({
+        "a:Area": {"id": "*", "select": "*"},
+      }),
+    }
+
+    var areas = [];
+    var showAreas = function() {
+      console.log(areas);
+      var placemarks = [];
+      _.each(areas[0].a, function(area, id) {
+        placemarks.push(
+          App.controllers.fn.createPolygonPlacemark('area', area.id, area.polygonCoords, `${area.region} (${area.district} район)`, "1", 5)
+        );
+      })
+      console.log(placemarks);
+      overlays = App.views.addToMap(placemarks, mapInstance);
+    }
+    var callRender = _.after(1, showAreas);
+    areas.push(App.models.fn.getData(query, callRender));
+
     function find(urlStr, params) {
       return new Promise(function(resolve, reject) {
         var url = App.url.make(urlStr, params);

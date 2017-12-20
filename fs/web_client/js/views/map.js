@@ -305,7 +305,7 @@ App.views.addToMap = (placemarks, existMap) => {
   }
 
   _.each(placemarks, function(item) {
-    if (!item.polygonCoords && (!item.coords[0] || !item.coords[1])) { return; }
+    if (!item.polygonCoords && (!item.coords || !item.coords[0] || !item.coords[1])) { return; }
 
     const pathToIcon = `/web_client/img/${App.store.pathToIcons[item.type]}`;
     const icon = L.icon({

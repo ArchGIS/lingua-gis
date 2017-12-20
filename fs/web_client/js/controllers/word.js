@@ -65,17 +65,6 @@ App.controllers.word = new (Backbone.View.extend({
 
     var callRender = _.after(queryCounter, render);
 
-    // _.each(queries.complex, function(query, key) {
-    //   $.when(model.sendQuery(query)).then(function(response) {
-    //     _.extend(tmplData, response);
-
-    //     var ids = _.map(tmplData[key], function(obj) {return obj.id.toString()});
-
-    //     data.push(model.getData(queries[key], callRender, true, ids));
-    //     callRender();
-    //   })
-    // })
-
     data.push(model.getData(queries.single, callRender));
   },
 
