@@ -49,7 +49,7 @@ App.controllers.word = new (Backbone.View.extend({
         tmplData.placemarks.push(
           App.controllers.fn.createStandartPlacemark(
             'local', 
-            vers.id, 
+            val.id,
             val.x, 
             val.y, 
             `${vers.name1}${vers.name2 ? ' / ' + vers.name2 : ''}${vers.name3 ? ' / ' + vers.name3 : ''} (${val.name})`, 
