@@ -94,14 +94,13 @@ App.views.search = new (Backbone.View.extend({
 
     var areas = [];
     var showAreas = function() {
-      console.log(areas);
       var placemarks = [];
       _.each(areas[0].a, function(area, id) {
         placemarks.push(
           App.controllers.fn.createPolygonPlacemark('area', area.id, area.polygonCoords, `${area.region} (${area.district} район)`, "1", 5)
         );
       })
-      console.log(placemarks);
+      
       overlays = App.views.addToMap(placemarks, mapInstance);
     }
     var callRender = _.after(1, showAreas);

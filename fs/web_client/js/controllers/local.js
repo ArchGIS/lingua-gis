@@ -31,14 +31,14 @@ App.controllers.local = new (Backbone.View.extend({
       console.log(tmplData);
 
       tmplData.placemarks = [{
-        type: "research",
+        type: "local",
         id: lId,
         coords: [tmplData.l.x, tmplData.l.y],
         pref: {
           hintContent: tmplData.l.name
         },
         opts: {
-          preset: "resType5"
+          preset: "0"
         }
       }];
 

@@ -38,14 +38,14 @@ App.controllers.version = new (Backbone.View.extend({
 
       _.each(tmplData.l, function(local, i) {
         tmplData.placemarks[i] = {
-          type: "research",
+          type: "local",
           id: `${local.id}`,
           coords: [local.x, local.y],
           pref: {
             hintContent: local.name
           },
           opts: {
-            preset: "resType5"
+            preset: "0"
           }
         };
       })
